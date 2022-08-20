@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.arean.ClimateRelief.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_donate"
+        android:name="com.arean.ClimateRelief.ui.donate.DonateFragment"
+        android:label="@string/title_donate"
+        tools:layout="@layout/fragment_donate" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.arean.ClimateRelief.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_claim"
+        android:name="com.arean.ClimateRelief.ui.claim.ClaimFragment"
+        android:label="@string/title_claim"
+        tools:layout="@layout/fragment_claim" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.arean.ClimateRelief.ui.account.AccountFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account" />
 </navigation>

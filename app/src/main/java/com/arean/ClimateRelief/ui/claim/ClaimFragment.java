@@ -1,4 +1,4 @@
-package com.arean.ClimateRelief.ui.home;
+package com.arean.ClimateRelief.ui.claim;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.arean.ClimateRelief.databinding.FragmentHomeBinding;
+import com.arean.ClimateRelief.databinding.FragmentClaimBinding;
 
+public class ClaimFragment extends Fragment {
 
-public class HomeFragment extends Fragment {
-
-    private FragmentHomeBinding binding;
+    private FragmentClaimBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        ClaimViewModel claimViewModel =
+                new ViewModelProvider(this).get(ClaimViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentClaimBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textClaim;
+        claimViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
