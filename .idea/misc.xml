@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/activity_register.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/activity_register_from_account.xml" value="0.25" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/activity_user_profile.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/layout/fragment_account.xml" value="0.25" />
+        <entry key="..\:/Users/ahnaf/AndroidStudioProjects/ClimateRelief/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.215" />
         <entry key="app/src/main/res/drawable/ic_account_black_24dp.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable/ic_baseline_claim_24dp.xml" value="0.1765" />
