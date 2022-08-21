@@ -68,6 +68,8 @@
 
         android:inputType="textPassword"
         android:padding="15sp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +90,8 @@
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:padding="15sp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

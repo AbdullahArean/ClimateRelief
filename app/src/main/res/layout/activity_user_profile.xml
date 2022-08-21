@@ -98,7 +98,9 @@
                         android:layout_alignStart="@id/ic_profile"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="50dp"
-                        android:hint="loading" />
+                        android:hint="loading"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
                 </RelativeLayout>
 
                 <View
@@ -133,7 +135,9 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="20dp"
-                        android:hint="Loading" />
+                        android:hint="Loading"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
                 </RelativeLayout>
 
                 <View
@@ -168,7 +172,9 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="20dp"
-                        android:hint="Loading" />
+                        android:hint="Loading"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
                 </RelativeLayout>
 
                 <View
@@ -203,7 +209,9 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="20dp"
-                        android:hint="Loading" />
+                        android:hint="Loading"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
                 </RelativeLayout>
 
                 <View
@@ -233,11 +241,13 @@
                         android:id="@+id/textView_show_mobile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_alignStart="@id/ic_mobile"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="20dp"
-                        android:hint="Loading" />
+                        android:hint="Loading"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
                 </RelativeLayout>
 
                 <ProgressBar
