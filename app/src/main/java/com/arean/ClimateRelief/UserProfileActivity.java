@@ -1,6 +1,11 @@
 package com.arean.ClimateRelief;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -36,6 +42,15 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewDoB = findViewById(R.id.textView_show_dob);
         textViewGender = findViewById(R.id.textView_show_gender);
         textViewMobile = findViewById(R.id.textView_show_mobile);
+
+        imageView = findViewById(R.id.imageView_profile_dp);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserProfileActivity.this, UploadProfilePicActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         authProfile = FirebaseAuth.getInstance();
@@ -87,7 +102,15 @@ public class UserProfileActivity extends AppCompatActivity {
                     textViewDoB.setText(doB);
                     textViewMobile.setText(mobile);
 
+                    Uri uri = firebaseUser.getPhotoUrl();
 
+                    Picasso.with(UserProfileActivity.this).load(uri).into(imageView);
+
+                }
+
+                else
+                {
+                    Toast.makeText(UserProfileActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -100,5 +123,73 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.common_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id==R.id.menu_refresh)
+        {
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0,0);
+        }
+
+        else if(id == R.id.menu_update_profile)
+        {
+            Intent intent = new Intent(UserProfileActivity.this, UpdateProfileActivity.class);
+            startActivity(intent);
+
+        }
+//
+        else if(id == R.id.menu_update_email)
+        {
+            Intent intent = new Intent(UserProfileActivity.this, UpdateEmailActivity.class);
+            startActivity(intent);
+
+        }
+//        else if(id == R.id.menu_settings)
+//        {
+//            Toast.makeText(UserProfileActivity.this, "menu settings", Toast.LENGTH_SHORT).show();
+//
+//        }
+//
+//        else if(id == R.id.menu_change_password)
+//        {
+//            Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
+//            startActivity(intent);
+//        }
+//
+//        else if(id == R.id.menu_delete_profile)
+//        {
+//            Intent intent = new Intent(UserProfileActivity.this, DeleteProfileActivity.class);
+//            startActivity(intent);
+//
+//        }
+
+        else if(id == R.id.menu_logout)
+        {
+           authProfile.signOut();
+            Toast.makeText(UserProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+
+
+
+        }
+        else
+        {
+            Toast.makeText(UserProfileActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

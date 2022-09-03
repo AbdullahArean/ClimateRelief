@@ -74,7 +74,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewName"
                         android:padding="6dp"
-                        android:text="Full Name*" />
+                        android:text="Full Name*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_name"
@@ -94,6 +95,7 @@
                         android:layout_toEndOf="@id/imageViewName"
                         android:background="@android:color/transparent"
                         android:hint="enter your full name"
+                        android:textColorHint="@color/black"
                         android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -124,7 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:padding="6dp"
-                        android:text="Email*" />
+                        android:text="Email*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_email"
@@ -144,6 +147,7 @@
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:background="@android:color/transparent"
                         android:hint="enter your email address"
+                        android:textColorHint="@color/black"
                         android:inputType="textEmailAddress"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -172,7 +176,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:padding="6dp"
-                        android:text="Date of Birth (dd/mm/yyyy)*" />
+                        android:text="Date of Birth (dd/mm/yyyy)*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_dob"
@@ -192,6 +197,7 @@
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:background="@android:color/transparent"
                         android:hint="select your dob"
+                        android:textColorHint="@color/black"
                         android:inputType="date"
                         android:padding="6dp"
                         android:focusable="false"
@@ -232,7 +238,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewGender"
                         android:padding="6dp"
-                        android:text="Gender*" />
+                        android:text="Gender*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_gender"
@@ -295,7 +302,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:padding="6dp"
-                        android:text="Mobile*" />
+                        android:text="Mobile*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_mobile"
@@ -315,6 +323,7 @@
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:background="@android:color/transparent"
                         android:hint="enter your mobile no. (without +91)"
+                        android:textColorHint="@color/black"
                         android:inputType="phone"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -343,7 +352,9 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:padding="6dp"
-                        android:text="Password*" />
+                        android:text="Password*"
+
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_pwd"
@@ -363,6 +374,7 @@
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:background="@android:color/transparent"
                         android:hint="enter your password"
+                        android:textColorHint="@color/black"
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -402,7 +414,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewConfirmPwd"
                         android:padding="6dp"
-                        android:text="Confirm Password*" />
+                        android:text="Confirm Password*"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:id="@+id/divider_confirm_pwd"
@@ -422,6 +435,7 @@
                         android:layout_toEndOf="@id/imageViewConfirmPwd"
                         android:background="@android:color/transparent"
                         android:hint="enter your password"
+                        android:textColorHint="@color/black"
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textSize="16sp" />
