@@ -46,6 +46,16 @@ public class LoginActivity extends AppCompatActivity {
 
         authProfile = FirebaseAuth.getInstance();
 
+        Button buttonForgotPassword = findViewById(R.id.button_forgot_password);
+        buttonForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "You can reset your password now", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+
+            }
+        });
+
 
 //        imageViewShowHidePwd = (ImageView)findViewById(R.id.imageView_show_hide_pwd);
 ////        imageViewShowHidePwd.setImageDrawable(getResources().getDrawable(R.drawable.ic_show_pwd));
@@ -108,14 +118,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        Button buttonRegister = findViewById(R.id.buttonRegister);
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button buttonRegister = findViewById(R.id.buttonRegister);
+//        buttonRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 //        Button buttonToreliefForm = findViewById(R.id.buttonToreliefForm);
 //        buttonToreliefForm.setOnClickListener(new View.OnClickListener() {
@@ -197,19 +207,19 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if(authProfile.getCurrentUser()!=null)
-//        {
-//            Toast.makeText(LoginActivity.this, "You are already logged in", Toast.LENGTH_SHORT).show();
-//            startActivity(new Intent(LoginActivity.this, UserProfileActivity.class));
-//            finish();
-//        }
-//        else
-//        {
-//            Toast.makeText(LoginActivity.this, "You can login now", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(authProfile.getCurrentUser()!=null)
+        {
+            Toast.makeText(LoginActivity.this, "You are already logged in", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, UserProfileActivity.class));
+            finish();
+        }
+        else
+        {
+            Toast.makeText(LoginActivity.this, "You can login now", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

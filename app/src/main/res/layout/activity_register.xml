@@ -75,8 +75,12 @@
                         android:layout_toEndOf="@id/imageViewName"
                         android:padding="6dp"
                         android:text="Full Name*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_name"
@@ -96,6 +100,7 @@
                         android:layout_toEndOf="@id/imageViewName"
                         android:background="@android:color/transparent"
                         android:hint="enter your full name"
+                        android:textColorHint="@color/black"
                         android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textColor="#000000"
@@ -129,8 +134,12 @@
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:padding="6dp"
                         android:text="Email*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_email"
@@ -150,6 +159,7 @@
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:background="@android:color/transparent"
                         android:hint="enter your email address"
+                        android:textColorHint="@color/black"
                         android:inputType="textEmailAddress"
                         android:padding="6dp"
                         android:textColor="#000000"
@@ -181,8 +191,12 @@
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:padding="6dp"
                         android:text="Date of Birth (dd/mm/yyyy)*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_dob"
@@ -203,6 +217,7 @@
                         android:background="@android:color/transparent"
                         android:focusable="false"
                         android:hint="select your dob"
+                        android:textColorHint="@color/black"
                         android:inputType="date"
                         android:padding="6dp"
 
@@ -245,8 +260,12 @@
                         android:layout_toEndOf="@id/imageViewGender"
                         android:padding="6dp"
                         android:text="Gender*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_gender"
@@ -312,8 +331,12 @@
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:padding="6dp"
                         android:text="Mobile*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_mobile"
@@ -333,6 +356,7 @@
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:background="@android:color/transparent"
                         android:hint="enter your mobile no. (without +91)"
+                        android:textColorHint="@color/black"
                         android:inputType="phone"
                         android:padding="6dp"
                         android:textColor="#000000"
@@ -364,8 +388,13 @@
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:padding="6dp"
                         android:text="Password*"
+<<<<<<< HEAD
+
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_pwd"
@@ -385,6 +414,7 @@
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:background="@android:color/transparent"
                         android:hint="enter your password"
+                        android:textColorHint="@color/black"
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textColor="#000000"
@@ -427,8 +457,12 @@
                         android:layout_toEndOf="@id/imageViewConfirmPwd"
                         android:padding="6dp"
                         android:text="Confirm Password*"
+<<<<<<< HEAD
+                        android:textColor="@color/black"/>
+=======
                         android:textColor="#000000"
                         android:textColorHint="#000000" />
+>>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_confirm_pwd"
@@ -448,6 +482,7 @@
                         android:layout_toEndOf="@id/imageViewConfirmPwd"
                         android:background="@android:color/transparent"
                         android:hint="enter your password"
+                        android:textColorHint="@color/black"
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textColor="#000000"
