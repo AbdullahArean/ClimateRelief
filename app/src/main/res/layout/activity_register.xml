@@ -75,12 +75,7 @@
                         android:layout_toEndOf="@id/imageViewName"
                         android:padding="6dp"
                         android:text="Full Name*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_name"
@@ -104,9 +99,7 @@
                         android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
-<!--                        android:textCursorDrawable="@drawable/edittextcursor"-->
 
                 </RelativeLayout>
 
@@ -134,12 +127,7 @@
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:padding="6dp"
                         android:text="Email*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_email"
@@ -163,7 +151,6 @@
                         android:inputType="textEmailAddress"
                         android:padding="6dp"
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
                 </RelativeLayout>
 
@@ -191,13 +178,7 @@
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:padding="6dp"
                         android:text="Date of Birth (dd/mm/yyyy)*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
-
                     <View
                         android:id="@+id/divider_dob"
                         android:layout_width="250dp"
@@ -222,7 +203,6 @@
                         android:padding="6dp"
 
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <ImageView
@@ -260,12 +240,7 @@
                         android:layout_toEndOf="@id/imageViewGender"
                         android:padding="6dp"
                         android:text="Gender*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_gender"
@@ -331,14 +306,8 @@
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:padding="6dp"
                         android:text="Mobile*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
-
-                    <View
+                     <View
                         android:id="@+id/divider_mobile"
                         android:layout_width="250dp"
                         android:layout_height="1dp"
@@ -360,7 +329,6 @@
                         android:inputType="phone"
                         android:padding="6dp"
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
                 </RelativeLayout>
 
@@ -388,13 +356,7 @@
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:padding="6dp"
                         android:text="Password*"
-<<<<<<< HEAD
-
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_pwd"
@@ -418,7 +380,6 @@
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <ImageView
@@ -457,12 +418,7 @@
                         android:layout_toEndOf="@id/imageViewConfirmPwd"
                         android:padding="6dp"
                         android:text="Confirm Password*"
-<<<<<<< HEAD
                         android:textColor="@color/black"/>
-=======
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
->>>>>>> 0302658ad823b43cf77ad2fd08185be0eb58dead
 
                     <View
                         android:id="@+id/divider_confirm_pwd"
@@ -486,7 +442,6 @@
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textColor="#000000"
-                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <ImageView
