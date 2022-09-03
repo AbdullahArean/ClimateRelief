@@ -26,7 +26,10 @@
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.215" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.215" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.215" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.8346153846153846" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.2477355072463768" />
         <entry key="app/src/main/res/layout/fragment_claim.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.24954710144927536" />
         <entry key="app/src/main/res/layout/fragment_donate.xml" value="0.1381340579710145" />
