@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,10 +39,11 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup radioGroupRegisterGender;
     private RadioButton radioButtonRegisterSelectedGender;
     private DatePickerDialog picker;
-    private static final String  TAG = "RegisterActivity";
+    private ImageView back;
+    private static final String TAG = "RegisterActivity";
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -68,11 +70,18 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int dayofMonth) {
 
-                        editTextRegisterDoB.setText(dayofMonth+ "/"+ (month+1) + "/" + year );
+                        editTextRegisterDoB.setText(dayofMonth + "/" + (month + 1) + "/" + year);
                     }
                 }, year, month, day);
 
                 picker.show();
+            }
+        });
+        back= findViewById(R.id.back_arrow_reg);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
@@ -93,89 +102,61 @@ public class RegisterActivity extends AppCompatActivity {
                 String textGender;
 
 
-                if(TextUtils.isEmpty(textFullName))
-                {
+                if (TextUtils.isEmpty(textFullName)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your full name", Toast.LENGTH_SHORT).show();
                     editTextRegisterFullName.setError("Full name required");
                     editTextRegisterFullName.requestFocus();
-                }
-                else if(TextUtils.isEmpty(textEmail))
-                {
+                } else if (TextUtils.isEmpty(textEmail)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     editTextRegisterEmail.setError("Email required");
                     editTextRegisterEmail.requestFocus();
-                }
-
-                else if(!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches())
-                {
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()) {
                     Toast.makeText(RegisterActivity.this, "Please re-enter your email", Toast.LENGTH_SHORT).show();
                     editTextRegisterEmail.setError("Valid Email required");
                     editTextRegisterEmail.requestFocus();
 
-                }
-                else if(TextUtils.isEmpty(textDoB))
-                {
+                } else if (TextUtils.isEmpty(textDoB)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your date of birth", Toast.LENGTH_SHORT).show();
                     editTextRegisterDoB.setError("Full name required");
                     editTextRegisterDoB.requestFocus();
                 }
-                if(radioGroupRegisterGender.getCheckedRadioButtonId()==-1)
-                {
+                if (radioGroupRegisterGender.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(RegisterActivity.this, "Please select your gender", Toast.LENGTH_SHORT).show();
                     radioButtonRegisterSelectedGender.setError("Gender required");
                     radioButtonRegisterSelectedGender.requestFocus();
-                }
-                else if(TextUtils.isEmpty(textMobile))
-                {
+                } else if (TextUtils.isEmpty(textMobile)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
                     editTextRegisterMobile.setError("phone number required");
                     editTextRegisterMobile.requestFocus();
 
-                }
-
-                else if(textMobile.length()!=11)
-                {
+                } else if (textMobile.length() != 11) {
                     Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_SHORT).show();
                     editTextRegisterMobile.setError("valid phone number required");
                     editTextRegisterMobile.requestFocus();
 
-                }
-                else if(TextUtils.isEmpty(textPwd))
-                {
+                } else if (TextUtils.isEmpty(textPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your password", Toast.LENGTH_SHORT).show();
                     editTextRegisterPassword.setError("password required");
                     editTextRegisterPassword.requestFocus();
 
 
-                }
-
-                else if(textPwd.length()<6)
-                {
+                } else if (textPwd.length() < 6) {
                     Toast.makeText(RegisterActivity.this, "Please re-enter your password", Toast.LENGTH_SHORT).show();
                     editTextRegisterPassword.setError("valid password required");
                     editTextRegisterPassword.requestFocus();
-                }
-
-                else if(TextUtils.isEmpty(textConfirmPwd))
-                {
+                } else if (TextUtils.isEmpty(textConfirmPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please confirm your password", Toast.LENGTH_SHORT).show();
                     editTextRegisterConfirmPassword.setError("Confirmation is required");
                     editTextRegisterConfirmPassword.requestFocus();
 
 
-                }
-
-                else if(!textPwd.equals(textConfirmPwd))
-                {
+                } else if (!textPwd.equals(textConfirmPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please enter same password", Toast.LENGTH_SHORT).show();
                     editTextRegisterPassword.setError("same password required");
                     editTextRegisterPassword.requestFocus();
                     editTextRegisterPassword.clearComposingText();
                     editTextRegisterConfirmPassword.clearComposingText();
-                }
-
-                else
-                {
+                } else {
 
                     textGender = radioButtonRegisterSelectedGender.getText().toString();
                     progressBar.setVisibility(View.VISIBLE);
@@ -184,75 +165,60 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
 
-
-
             }
         });
 
 
-
     }
-    private void registerUser(String textFullName, String textEmail,String textDoB, String textGender, String textMobile, String textPwd)
-    {
+
+    private void registerUser(String textFullName, String textEmail, String textDoB, String textGender, String textMobile, String textPwd) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUserWithEmailAndPassword(textEmail,textPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(textEmail, textPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
+                if (task.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this, "User Registered", Toast.LENGTH_SHORT).show();
                     FirebaseUser firebaseUser = auth.getCurrentUser();
 
                     UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(textFullName).build();
-                    firebaseUser .updateProfile(profileChangeRequest);
+                    firebaseUser.updateProfile(profileChangeRequest);
 
 
-                    ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails( textDoB, textGender, textMobile);
+                    ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textDoB, textGender, textMobile);
 
                     DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
                     referenceProfile.child(firebaseUser.getUid()).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 
-                            if(task.isSuccessful())
-                            {
+                            if (task.isSuccessful()) {
                                 firebaseUser.sendEmailVerification();
                                 Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
-                            }
-
-                            else{
+                            } else {
 
                                 Toast.makeText(RegisterActivity.this, "User registered failed", Toast.LENGTH_LONG).show();
 
 
                             }
 
-                            progressBar.setVisibility(View.GONE) ;
+                            progressBar.setVisibility(View.GONE);
 
                         }
                     });
-                }
-
-                else
-                {
-                    try{
+                } else {
+                    try {
                         throw task.getException();
 
-                    }
-                    catch (FirebaseAuthWeakPasswordException e){
+                    } catch (FirebaseAuthWeakPasswordException e) {
                         editTextRegisterPassword.setError("Your password is too weak. ");
                         editTextRegisterPassword.requestFocus();
-                    }
-                    catch(FirebaseAuthInvalidCredentialsException e)
-                    {
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
                         editTextRegisterEmail.setError("email is invalid or already in use");
                         editTextRegisterEmail.requestFocus();
-                    }
-                    catch (Exception e)
-                    {
+                    } catch (Exception e) {
                         Log.e(TAG, e.getMessage());
                         Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -263,9 +229,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-
-
-
 
 
 }

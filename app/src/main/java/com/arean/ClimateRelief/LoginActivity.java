@@ -8,8 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -35,14 +33,17 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView imageViewShowHidePwd;
 
     private static final String TAG = "LoginActivity";
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         editTextLoginEmail = findViewById(R.id.editText_login_email);
         editTextLoginPwd = findViewById(R.id.editText_login_pwd);
+        back = findViewById(R.id.back_arrow_login);
 
         authProfile = FirebaseAuth.getInstance();
 
@@ -56,6 +57,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 //        imageViewShowHidePwd = (ImageView)findViewById(R.id.imageView_show_hide_pwd);
 ////        imageViewShowHidePwd.setImageDrawable(getResources().getDrawable(R.drawable.ic_show_pwd));
@@ -77,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
 //        });
 
 
-
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,32 +91,21 @@ public class LoginActivity extends AppCompatActivity {
                 String textEmail = editTextLoginEmail.getText().toString();
                 String textPwd = editTextLoginPwd.getText().toString();
 
-                if(TextUtils.isEmpty(textEmail))
-                {
+                if (TextUtils.isEmpty(textEmail)) {
                     Toast.makeText(LoginActivity.this, "Please enter your mail", Toast.LENGTH_SHORT).show();
                     editTextLoginEmail.setError("Email is required");
                     editTextLoginEmail.requestFocus();
-                }
-
-                else if(!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches())
-                {
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()) {
                     Toast.makeText(LoginActivity.this, "Please enter valid mail", Toast.LENGTH_SHORT).show();
                     editTextLoginEmail.setError("Valid Email is required");
                     editTextLoginEmail.requestFocus();
 
-                }
-
-                else if(TextUtils.isEmpty(textPwd))
-                {
+                } else if (TextUtils.isEmpty(textPwd)) {
                     Toast.makeText(LoginActivity.this, "Please enter your password", Toast.LENGTH_SHORT).show();
                     editTextLoginPwd.setError("Password is required");
                     editTextLoginPwd.requestFocus();
 
-                }
-
-                else
-
-                {
+                } else {
                     loginUser(textEmail, textPwd);
                 }
 
@@ -136,48 +131,39 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        });
 
+
+//        NavController navController = Navigation.findNavController(LoginActivity.this, R.id.navigation_account);
+//        navController.navigateUp();
+//        navController.navigate(String.valueOf(AccountFragment.class));
     }
 
     private void loginUser(String email, String pwd) {
 
-        authProfile.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        authProfile.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
+                if (task.isSuccessful()) {
                     FirebaseUser firebaseUser = authProfile.getCurrentUser();
-                    if(firebaseUser.isEmailVerified())
-                    {
+                    if (firebaseUser.isEmailVerified()) {
                         Toast.makeText(LoginActivity.this, "Log in Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, UserProfileActivity.class));
                         finish();
-                    }
-                    else
-                    {
+                    } else {
                         firebaseUser.sendEmailVerification();
                         authProfile.signOut();
                         showAlertDialogBox();
                     }
 
-                }
-                else
-                {
-                    try{
+                } else {
+                    try {
                         throw task.getException();
-                    }
-                    catch(FirebaseAuthInvalidUserException e)
-                    {
+                    } catch (FirebaseAuthInvalidUserException e) {
                         editTextLoginEmail.setError("User does not exists or is no longer valid. Register again");
                         editTextLoginEmail.requestFocus();
-                    }
-                    catch(FirebaseAuthInvalidCredentialsException e)
-                    {
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
                         editTextLoginEmail.setError("Invalid credentials. Check and re-enter");
                         editTextLoginEmail.requestFocus();
-                    }
-
-                    catch(Exception e)
-                    {
+                    } catch (Exception e) {
                         Log.e(TAG, e.getMessage());
                         Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
@@ -211,14 +197,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(authProfile.getCurrentUser()!=null)
-        {
+        if (authProfile.getCurrentUser() != null) {
             Toast.makeText(LoginActivity.this, "You are already logged in", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, UserProfileActivity.class));
             finish();
-        }
-        else
-        {
+        } else {
             Toast.makeText(LoginActivity.this, "You can login now", Toast.LENGTH_SHORT).show();
         }
     }

@@ -23,10 +23,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:textColor="@color/white"
                     android:text="Sign-up"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/textView_register_instruction"
@@ -39,6 +39,13 @@
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu"
                     android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/back_arrow_reg"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    app:srcCompat="@drawable/back" />
+
             </RelativeLayout>
 
             <RelativeLayout
