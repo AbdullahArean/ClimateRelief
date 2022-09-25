@@ -73,18 +73,18 @@ List View
 
 
 ## Team Member Responsibilities :
-Abdullah Ibne Hanif Arean : 
-Prototype Design
-Version Control 
-Weather Update Page 
-Mehadi Hasan Santo :
-Navigation Control 
-Real Time Location Update
-Ahnaf Tahmid 
-LogIn and Sign Up 
-Firebase Authentication 
-Relief Form 
-Account Details 
+Abdullah Ibne Hanif Arean : <br>
+    - Prototype Design <br>
+    - Version Control <br>
+    - Weather Update Page <br>
+Mehadi Hasan Santo : <br>
+    - Navigation Control <br>
+    - Real Time Location Update <br>
+Ahnaf Tahmid <br>
+    - LogIn and Sign Up <br>
+    - Firebase Authentication <br>
+    - Relief Form <br>
+    - Account Details <br>
     
 
  
