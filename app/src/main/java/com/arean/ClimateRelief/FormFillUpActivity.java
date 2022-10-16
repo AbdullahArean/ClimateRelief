@@ -2,30 +2,61 @@ package com.arean.ClimateRelief;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class FormFillUpActivity extends AppCompatActivity {
 
 
+    private static final String TAG = "FormFillUpActivity";
     private Spinner spinnerDivision, spinnerDistrict, spinnerUpazilla, spinnerUnion;
     DatabaseReference databaseReference;
     List<String> divisionNames=new ArrayList<>();
@@ -34,12 +65,31 @@ public class FormFillUpActivity extends AppCompatActivity {
     ArrayAdapter<String> spinnerDivisionArrayAdapter,spinnerDistrictArrayAdapter,spinnerUpazillaArrayAdapter, spinnerUnionArrayAdapter;
     String divisionID;
 
+    String userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude;
+    EditText editTextSubmitUserFemaleCount, editTextSubmitUserChildrenCount, editTextSubmitUserSeniorCitizenCount;
+    RadioGroup userAnimalPresenceRadioGroup;
+    RadioButton userAnimalPresenceRadioButton;
+    Button button_getLocation;
+    TextView textView_LatitudeCoordinate, textView_LongitudeCoordinate;
+
+
+    private FirebaseAuth authProfile;
+    private FirebaseFirestore fstore;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    String userID;
+
+
+
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_fill_up);
+
 
         spinnerDivision = findViewById(R.id.spinnerDivision);
         spinnerDivisionArrayList = new ArrayList<>();
@@ -123,9 +173,120 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         });
 
+        button_getLocation = findViewById(R.id.button_getLocation);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(FormFillUpActivity.this);
+
+        button_getLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ActivityCompat.checkSelfPermission(FormFillUpActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(FormFillUpActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)== PackageManager.PERMISSION_GRANTED)
+                {
+                    getCurrentLocation();
+
+                }
+                else
+                {
+                    ActivityCompat.requestPermissions(FormFillUpActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 100);
+
+                }
+            }
+        });
+
+
+        Button buttonSubmit = findViewById(R.id.button_submit_relief_form);
+
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                userDivision = spinnerDivision.getSelectedItem().toString().replaceAll("[0-9]", "");
+                userDistrict = spinnerDistrict.getSelectedItem().toString().replaceAll("[0-9]", "");
+                userUpazilla = spinnerUpazilla.getSelectedItem().toString().replaceAll("[0-9]", "");
+                userUnion = spinnerUnion.getSelectedItem().toString().replaceAll("[0-9]", "");
+                editTextSubmitUserFemaleCount = findViewById(R.id.editText_register_female_count);
+                editTextSubmitUserChildrenCount = findViewById(R.id.editText_register_children_count);
+                editTextSubmitUserSeniorCitizenCount = findViewById(R.id.editText_register_senior_citizen_count);
+
+                userFemaleCount = editTextSubmitUserFemaleCount.getText().toString();
+                userChildrenCount = editTextSubmitUserChildrenCount.getText().toString();
+                userSeniorCitizenCount = editTextSubmitUserSeniorCitizenCount.getText().toString();
+                userAnimalPresenceRadioGroup = (RadioGroup) findViewById(R.id.radio_group_register_domestic_animal_presence);
+                int selectedID = userAnimalPresenceRadioGroup.getCheckedRadioButtonId();
+                userAnimalPresenceRadioButton = (RadioButton) findViewById(selectedID);
+                userDomesticAnimalPresence = userAnimalPresenceRadioButton.getText().toString();
+                userLocationLatitude = textView_LatitudeCoordinate.getText().toString();
+                userLocationLongitude = textView_LongitudeCoordinate.getText().toString();
+
+                storeDataIntoFirebase(userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude);
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100 && grantResults.length > 0 && (grantResults[0] + grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
+            getCurrentLocation();
+        } else {
+            Toast.makeText(FormFillUpActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @SuppressLint("MissingPermission")
+    private void getCurrentLocation() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
+        {
+            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+
+                    Location location = task.getResult();
+
+                    if(location != null)
+                    {
+                        textView_LatitudeCoordinate = findViewById(R.id.textView_LatitudeCoordinate);
+                        textView_LatitudeCoordinate.setText("Latitude: " + String.valueOf(location.getLatitude()));
+
+                        textView_LongitudeCoordinate = findViewById(R.id.textView_LongitudeCoordinate);
+                        textView_LongitudeCoordinate.setText("Longitude: " + String.valueOf(location.getLongitude()));
+
+                    }
+
+                    else
+                    {
+                        LocationRequest locationRequest = new LocationRequest().setPriority(Priority.PRIORITY_HIGH_ACCURACY).setInterval(10000).setFastestInterval(1000).setNumUpdates(1);
+                        LocationCallback locationCallback = new LocationCallback() {
+                            @Override
+                            public void onLocationResult(@NonNull LocationResult locationResult) {
+
+                                Location location1 = locationResult.getLastLocation();
+                                textView_LatitudeCoordinate.setText("Latitude: " + String.valueOf(location1.getLatitude()));
+                                textView_LongitudeCoordinate.setText("Longitude: " + String.valueOf(location1.getLongitude()));
+
+                            }
+                        };
+
+                        fusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback, Looper.myLooper());
+
+
+                    }
 
 
 
+                }
+            });
+        }
+
+        else
+        {
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
     }
 
     private void getDataIntoSpinnerUpazilla() {
@@ -274,6 +435,48 @@ public class FormFillUpActivity extends AppCompatActivity {
         });
 
     }
+
+
+    public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, String userLocationLatitude, String userLocationLongitude) {
+
+        authProfile = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+
+        FirebaseUser firebaseUser = authProfile.getCurrentUser();
+        userID  = firebaseUser.getUid();
+        DocumentReference documentReference = fstore.collection("Claimed Users").document(userID);
+        Map<String, Object> user = new HashMap<>();
+        user.put("userDivision", userDivision);
+        user.put("userDistrict", userDistrict);
+        user.put("userUpazilla", userUpazilla);
+        user.put("userUnion", userUnion);
+        user.put("userFemaleCount", userFemaleCount);
+        user.put("userChildrenCount", userChildrenCount);
+        user.put("userSeniorCitizenCount", userSeniorCitizenCount);
+        user.put("userDomesticAnimalPresence", userDomesticAnimalPresence);
+        user.put("userLocationLatitude", userLocationLatitude);
+        user.put("userLocationLongitude", userLocationLongitude);
+
+        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG,"Claimed User is created for " + userID );
+
+            }
+        });
+
+
+
+
+
+
+
+    }
+
+
+
+
+
 
 
 
