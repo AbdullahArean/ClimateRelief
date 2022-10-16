@@ -1,12 +1,32 @@
 buildscript {
+//    repositories {
+//        //google()
+//        //mavenCentral()
+//
+//    }
     dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'io.objectbox:objectbox-gradle-plugin:3.0.1'
         classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
+
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.application' version '7.2.1' apply false
-    id 'com.android.library' version '7.2.1' apply false
+    id 'com.android.application' version '7.3.0' apply false
+    id 'com.android.library' version '7.3.0' apply false
 }
+
+allprojects {
+//    repositories {
+//        google()
+//        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+//        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+//    }
+}
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TextViewInColoredCard">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="SubTextViewInColoredCard">
+        <item name="android:textColor">@color/grey_10</item>
+    </style>
+
+    <style name="IconInColoredCard">
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="TempTextView">
+        <item name="android:textSize">70sp</item>
+        <item name="android:textColor">@color/grey_10</item>
+    </style>
+
+    <style name="DescriptionTextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey_10</item>
+    </style>
+
+    <style name="HumidityTextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/grey_10</item>
+    </style>
+
+    <style name="WindSpeedTextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/grey_10</item>
+    </style>
+
+    <style name="HeadlineTextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MaterialSearchViewStyle">
+        <!-- Background for the search bar -->
+<!--        <item name="searchBackground">?attr/colorPrimary</item>-->
+
+        <!-- Change text color for edit text. This will also be the color of the cursor -->
+        <item name="android:textColor">@android:color/black</item>
+
+        <!-- Change hint text color for edit text -->
+        <item name="android:textColorHint">@android:color/black</item>
+
+    </style>
+
+    <style name="TransitionTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/scrim</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementsUseOverlay">true</item>
+    </style>
+</resources>
