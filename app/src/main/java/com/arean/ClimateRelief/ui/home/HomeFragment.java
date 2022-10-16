@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ContactUsActivity.class);
                 Intent intent2 = new Intent(getActivity(), MainActivityweather.class);
-                startActivity(intent);
+                startActivity(intent2);
             }
         });
         return root;

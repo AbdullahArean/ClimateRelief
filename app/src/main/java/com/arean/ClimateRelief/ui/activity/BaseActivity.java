@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.arean.ClimateRelief.utils.MyApplication;
-import com.arean.ClimateRelief.utils.MyApplication;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 

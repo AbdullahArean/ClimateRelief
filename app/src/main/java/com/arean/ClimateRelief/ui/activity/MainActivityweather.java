@@ -85,12 +85,9 @@ public class MainActivityweather extends BaseActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    //binding = ActivityMainWeatherBinding.inflate(getLayoutInflater());
-    binding = ActivityMainWeatherBinding.inflate(
-            getLayoutInflater()
-    );
+    binding = ActivityMainWeatherBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-    setSupportActionBar(binding.toolbarLayout.toolbar);
+    //setSupportActionBar(binding.toolbarLayout.toolbar);
     initSearchView();
     initValues();
     setupTextSwitchers();
