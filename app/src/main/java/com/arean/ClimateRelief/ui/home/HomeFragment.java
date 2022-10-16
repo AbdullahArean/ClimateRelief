@@ -16,6 +16,10 @@ import com.arean.ClimateRelief.ContactUsActivity;
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.RegisterActivity;
 import com.arean.ClimateRelief.databinding.FragmentHomeBinding;
+import com.arean.ClimateRelief.ui.activity.BaseActivity;
+import com.arean.ClimateRelief.ui.activity.HourlyActivity;
+import com.arean.ClimateRelief.ui.activity.MainActivityweather;
+import com.arean.ClimateRelief.utils.MyApplication;
 
 
 public class HomeFragment extends Fragment {
@@ -33,13 +37,23 @@ public class HomeFragment extends Fragment {
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+//        Button buttonContactUs= (Button) root.findViewById(R.id.buttonContactUs);
+//
+//        buttonContactUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), ContactUsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         Button buttonContactUs= (Button) root.findViewById(R.id.buttonContactUs);
 
         buttonContactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ContactUsActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getActivity(), MainActivityweather.class);
+                startActivity(intent2);
             }
         });
         return root;

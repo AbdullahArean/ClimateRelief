@@ -11,5 +11,16 @@
     <color name="lime">#00FF00</color>
     <color name="dark_green">#006400</color>
     <color name="light_gray">#D3D3D3</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#dddddd</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="overlay_dark_50">#40000000</color>
+    <color name="material_blue">#6452f0</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="green_success">#155724</color>
+    <color name="colorPrimaryNight">#263238</color>
+    <color name="colorPrimaryDarkNight">#141d26</color>
+    <color name="scrim">#99323232</color>
+
 <!--    changed-->
 </resources>

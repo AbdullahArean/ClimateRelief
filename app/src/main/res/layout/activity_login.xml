@@ -124,7 +124,8 @@
         android:layout_height="60dp"
         app:srcCompat="@drawable/back"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="9dp" />
+        tools:layout_editor_absoluteY="9dp"
+        tools:ignore="MissingConstraints" />
 
     <!--    <ProgressBar-->
     <!--        android:id="@+id/progressBar"-->
