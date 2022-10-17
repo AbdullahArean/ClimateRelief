@@ -14,6 +14,39 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="335dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_recycler_view_head"
+                android:text="How To Claim"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:background="@color/purple_700"
+                android:textColor="@color/white"
+                android:textAlignment="center">
+
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_claim_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_recycler_view_head"
+                android:layout_marginTop="30dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:background="@color/purple_700">
@@ -393,10 +426,74 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/RL_SubmitReliefForm"
+                android:id="@+id/RL_NID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/RL_GetLocation"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/textView_register_nid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:text="NID Number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText_register_nid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+
+                    android:layout_below="@id/textView_register_nid"
+                    android:layout_marginTop="6dp"
+                    android:hint="Type your 10 Digit NID number"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_BkashContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RL_NID"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/textView_register_bkashContactNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:text="Bkash Phone Number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText_register_bkashContactNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+
+                    android:layout_below="@id/textView_register_bkashContactNo"
+                    android:layout_marginTop="6dp"
+                    android:hint="Type your contact no which has a Bkash Account"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_SubmitReliefForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RL_BkashContactNo"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/border">
 

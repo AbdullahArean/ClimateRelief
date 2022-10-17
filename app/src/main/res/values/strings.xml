@@ -21,6 +21,7 @@
             This application is open source at <br/><a href="https://github.com/bkhezry/weather">https://github.com/bkhezry/weather</a></p>
         ]]>
     </string>
+
     <string name="developer_info_text" translatable="false">
         <![CDATA[
             <p>Behrouz Khezry <a href="https://twitter.com/bkhezry">@bkhezry</a></p>
