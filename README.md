@@ -130,9 +130,9 @@ Live Report of the Project: [Google Docs Report Link](https://docs.google.com/do
 
 ## Our Future  Planning
 
-Bring all the affected people into our scheme
-Make a non-android application
-Ensure claimer-donor direct communication
+Bring all the affected people into our scheme <br>
+Make a non-android application <br>
+Ensure claimer-donor direct communication to avoid misappropriation and mismanagement <br>
 
 
 ## Conclusion 
