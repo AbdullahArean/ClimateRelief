@@ -1,22 +1,22 @@
-### Project's Title
+## Project's Title
 
 Climate Relief
 
 
 
-### Introduction
+## Introduction
 
 Natural calamities are a matter of concern for the whole world nowadays. But in our country its effect is much more than any other country of this world. Cyclones and floods are very common in Bangladesh. Every year we face cyclones and floods multiple times specially the people living in the low lying part of the country are the worst sufferers. In these circumstances, they must be ensured of proper relief as they face the scarcity of food, pure drinking water etc. But in our country it is one of the biggest challenges to ensure relief to all who are affected and really badly in need of the relief. Because, there is no such management system to handle it. Moreover, corruption is also a matter of concern. Furthermore, the people who get the relief are not under the consideration of his/her family members. So, to solve those issues, we are making such an app with a complete management system that can ensure “Relief to All” moto. 
 
 
-### Why Are We Here?
+## Why Are We Here?
 Heavy rainfall throughout the country and the flow of large-scale water often leads to massive flooding situations in low-lying areas of the Northern, northeastern, and south-eastern districts of Bangladesh. Thousands of families get flood affected, lose their houses, and livestock, and struggle with contagious diseases while waiting for support and relief. But most of these people don’t get relief materials even after more than a week of flooding. Our app intends to make sure that victims get proper support/relief and show the donor the claim list so that they will know what and whom to donate.
 
 
 
 
 
-### Problems we want to solve
+## Problems we want to solve
 Insufficient relief distribution after flood
 Victim's names have been deducted from the relief list
 No system for complaint
@@ -25,7 +25,7 @@ Misappropriation of relief
 Mismanagement of giving the relief
 
 
-### Idea Originality
+## Idea Originality
 Despite the sizable problem of relief and its distribution, no one has yet found a solution. We think our app and concept are exceptional and have the potential to advance the issue's resolution.
 
 
@@ -48,16 +48,18 @@ We want to dedicate this app to the people of our country. We are not planning t
 
 ## Project Features:
 
-Registration & Sign In    
-Proper Validation for Multi-User Platform
-Real Time Weather Update
-Apply For/ Donate Relief
-Graphical Presentation of Relief Requests
-Multi-Language Support
-SMS Relief Confirmation
-Easy to Use & Smooth UX
-List View
-
+1. Registration & Sign In  <br>  
+2. Proper Validation for Multi-User Platform <br>
+3. Real Time Weather Update <br>
+4. Apply For/ Donate Relief <br>
+5. Graphical Presentation of Relief Requests <br>
+6. Auto Address Generator for any place <br>
+7. Multilingual Support <br>
+8. Night Mode <br>
+9. SMS Relief Confirmation <br>
+10. Easy to Use & Smooth UX <br>
+11. List View of Claimars <br>
+12. Upload Photo, Change Email and Other info <br>
 
 
 
@@ -74,24 +76,24 @@ List View
 
 ## Team Member Responsibilities :
 Abdullah Ibne Hanif Arean :<br> 
--Early Prototype Design<br>
--Interactive yet Simple UI/UX Design<br>
--Version Control Using Best Practices of Git and Github<br>
--Multifunctional Weather Update Page<br>
--Proper Documentation <br>
+- Early Prototype Design<br>
+- Interactive yet Simple UI/UX Design<br>
+- Version Control Using Best Practices of Git and Github<br>
+- Multifunctional Weather Update Page<br>
+- Proper Documentation <br>
 
-Ahnaf Tahmid <br>
--LogIn and Sign Up <br>
--Firebase Integration & Authentication<br> 
--Relief Form <br>
--Account Details<br>
+Ahnaf Tahmid :<br>
+- LogIn and Sign Up <br>
+- Firebase Integration & Authentication<br> 
+- Relief Form <br>
+- Account Details<br>
 
 Mehadi Hasan Santo :<br>
--Navigation Control <br>
--Real Time Location Update<br>
--Bug fixing and Debugging xmls<br>
--Format documentation and Readme file update<br>
-Map Integration<br>
+- Bottom Navigation Control <br>
+- Real Time Location Update<br>
+- Bug fixing and Debugging xmls<br>
+- Format documentation and Readme file update<br>
+- Map Integration <br>
 
     
 
