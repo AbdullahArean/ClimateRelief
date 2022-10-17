@@ -80,7 +80,7 @@ Abdullah Ibne Hanif Arean :<br>
 -Multifunctional Weather Update Page<br>
 -Proper Documentation <br>
 
-Ahnaf Tahmid 
+Ahnaf Tahmid <br>
 -LogIn and Sign Up <br>
 -Firebase Integration & Authentication<br> 
 -Relief Form <br>
