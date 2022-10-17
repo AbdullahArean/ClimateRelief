@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.checkerframework.checker.units.qual.A;
+
 public class UserProfileActivity extends AppCompatActivity {
 
 
@@ -31,6 +37,18 @@ public class UserProfileActivity extends AppCompatActivity {
     private String fullName, email, doB, gender, mobile;
     private ImageView imageView;
     private FirebaseAuth authProfile;
+    private Button btnLogOut;
+
+    String settings[] = {"Settings", "Languages", "Enable Dark Mode", "Privacy Policy"};
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+
+    String support[] = {"Help", "Contact Us", "About Us"};
+    AutoCompleteTextView autoCompleteTextViewforHelpandSupport;
+    ArrayAdapter<String> adapterItemsforHelpandSupport;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +61,8 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewDoB = findViewById(R.id.textView_show_dob);
         textViewGender = findViewById(R.id.textView_show_gender);
         textViewMobile = findViewById(R.id.textView_show_mobile);
+        btnLogOut = findViewById(R.id.buttonLogOut);
+
 
         imageView = findViewById(R.id.imageView_profile_dp);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +72,19 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
+
+        autoCompleteTextView = findViewById(R.id.autocompletetextView);
+        adapterItems = new ArrayAdapter<String>(UserProfileActivity.this, R.layout.settings_dropdown_item, settings);
+        autoCompleteTextView.setAdapter(adapterItems);
+
+
+        autoCompleteTextViewforHelpandSupport = findViewById(R.id.autocompletetextViewforHelpandSupport);
+        adapterItemsforHelpandSupport = new ArrayAdapter<String>(UserProfileActivity.this, R.layout.helpsupport_dropdown_item, support);
+        autoCompleteTextViewforHelpandSupport.setAdapter(adapterItemsforHelpandSupport);
 
 
         authProfile = FirebaseAuth.getInstance();
@@ -68,6 +101,22 @@ public class UserProfileActivity extends AppCompatActivity {
         {
             showUserProfile(firebaseUser);
         }
+
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                authProfile.signOut();
+                Toast.makeText(UserProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
 

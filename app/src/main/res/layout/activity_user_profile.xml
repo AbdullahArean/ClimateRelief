@@ -11,7 +11,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="1000dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -250,29 +250,99 @@
                         android:textColorHint="#000000" />
                 </RelativeLayout>
 
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    style="?android:attr/progressBarStyleLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true"
-                    android:elevation="10dp"
-                    android:visibility="gone" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RL_Settings"
+                    android:layout_below="@+id/RL_mobile"
+                    >
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                        <AutoCompleteTextView
+                            android:id="@+id/autocompletetextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Settings and Privacy"
+                            android:inputType="none"
+
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RL_HelpandSupport"
+                    android:layout_below="@+id/RL_Settings"
+                    >
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                        <AutoCompleteTextView
+                            android:id="@+id/autocompletetextViewforHelpandSupport"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Help and support"
+                            android:inputType="none"
+
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RL_LogOutButton"
+                    android:layout_below="@+id/RL_HelpandSupport"
+                    >
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Log Out"
+                        android:id="@+id/buttonLogOut">
+
+                    </Button>
+
+
+                </RelativeLayout>
+
+
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progress_bar"-->
+<!--                    style="?android:attr/progressBarStyleLarge"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:elevation="10dp"-->
+<!--                    android:visibility="gone" />-->
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_marginTop="50dp"
-                android:text="Loading"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:hint="Loading"
-                android:id="@+id/textView_show_register_date"/>
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="Loading"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAlignment="center"-->
+<!--                android:hint="Loading"-->
+<!--                android:id="@+id/textView_show_register_date"/>-->
 
         </LinearLayout>
 </ScrollView>

@@ -3,6 +3,9 @@ package com.arean.ClimateRelief.ui.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -28,6 +31,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.model.recyclerViewAdapter;
+import com.arean.ClimateRelief.model.recyclerViewModel;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -65,8 +70,8 @@ public class FormFillUpActivity extends AppCompatActivity {
     ArrayAdapter<String> spinnerDivisionArrayAdapter,spinnerDistrictArrayAdapter,spinnerUpazillaArrayAdapter, spinnerUnionArrayAdapter;
     String divisionID;
 
-    String userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude;
-    EditText editTextSubmitUserFemaleCount, editTextSubmitUserChildrenCount, editTextSubmitUserSeniorCitizenCount;
+    String userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude, userNIDNo, userBkashContactNo;
+    EditText editTextSubmitUserFemaleCount, editTextSubmitUserChildrenCount, editTextSubmitUserSeniorCitizenCount, editTextSubmitUserBkashContactNo, editTextSubmitUserNIDNo;
     RadioGroup userAnimalPresenceRadioGroup;
     RadioButton userAnimalPresenceRadioButton;
     Button button_getLocation;
@@ -79,6 +84,12 @@ public class FormFillUpActivity extends AppCompatActivity {
     String userID;
 
 
+    RecyclerView recyclerView;
+    ArrayList<recyclerViewModel> recyclerViewModels;
+    recyclerViewAdapter recyclerViewAdapter;
+
+
+
 
 
 
@@ -89,6 +100,27 @@ public class FormFillUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_fill_up);
+
+
+        recyclerView = findViewById(R.id.recycler_view_claim_form);
+        Integer[] stepImages = {R.drawable.steps, R.drawable.steps, R.drawable.steps,R.drawable.steps,R.drawable.steps,R.drawable.steps} ;
+        String [] stepNames = {"Step 1", "Step 2","Step 3","Step 4","Step 5","Step 6"};
+
+        recyclerViewModels = new ArrayList<>();
+        for(int i=0; i<stepImages.length; i++)
+        {
+            recyclerViewModel tempModel = new recyclerViewModel(stepImages[i], stepNames[i]);
+            recyclerViewModels.add(tempModel);
+
+        }
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(FormFillUpActivity.this,LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
+        recyclerViewAdapter = new recyclerViewAdapter(FormFillUpActivity.this, recyclerViewModels);
+        recyclerView.setAdapter(recyclerViewAdapter);
 
 
         spinnerDivision = findViewById(R.id.spinnerDivision);
@@ -206,6 +238,8 @@ public class FormFillUpActivity extends AppCompatActivity {
                 editTextSubmitUserFemaleCount = findViewById(R.id.editText_register_female_count);
                 editTextSubmitUserChildrenCount = findViewById(R.id.editText_register_children_count);
                 editTextSubmitUserSeniorCitizenCount = findViewById(R.id.editText_register_senior_citizen_count);
+                editTextSubmitUserBkashContactNo = findViewById(R.id.editText_register_bkashContactNo);
+                editTextSubmitUserNIDNo = findViewById(R.id.editText_register_nid);
 
                 userFemaleCount = editTextSubmitUserFemaleCount.getText().toString();
                 userChildrenCount = editTextSubmitUserChildrenCount.getText().toString();
@@ -216,8 +250,10 @@ public class FormFillUpActivity extends AppCompatActivity {
                 userDomesticAnimalPresence = userAnimalPresenceRadioButton.getText().toString();
                 userLocationLatitude = textView_LatitudeCoordinate.getText().toString();
                 userLocationLongitude = textView_LongitudeCoordinate.getText().toString();
+                userBkashContactNo = editTextSubmitUserBkashContactNo.getText().toString();
+                userNIDNo = editTextSubmitUserNIDNo.getText().toString();
 
-                storeDataIntoFirebase(userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude);
+                storeDataIntoFirebase(userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude, userNIDNo, userBkashContactNo);
 
             }
         });
@@ -437,7 +473,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     }
 
 
-    public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, String userLocationLatitude, String userLocationLongitude) {
+    public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, String userLocationLatitude, String userLocationLongitude, String userNIDNo, String userBkashContactNo) {
 
         authProfile = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -456,11 +492,13 @@ public class FormFillUpActivity extends AppCompatActivity {
         user.put("userDomesticAnimalPresence", userDomesticAnimalPresence);
         user.put("userLocationLatitude", userLocationLatitude);
         user.put("userLocationLongitude", userLocationLongitude);
+        user.put("userNIDNo", userNIDNo);
+        user.put("userBkashContactNo", userBkashContactNo);
 
         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Log.d(TAG,"Claimed User is created for " + userID );
+                Toast.makeText(FormFillUpActivity.this, "User information submitted for userID: " + userID , Toast.LENGTH_SHORT).show();
 
             }
         });
