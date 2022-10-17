@@ -54,11 +54,11 @@ public class AboutFragment extends DialogFragment {
       } catch (PackageManager.NameNotFoundException e) {
         // do nothing
       }
-      setTextWithLinks(view.findViewById(R.id.text_application_info), getString(R.string.application_info_text, versionName));
-      setTextWithLinks(view.findViewById(R.id.text_developer_info), getString(R.string.developer_info_text));
-      setTextWithLinks(view.findViewById(R.id.text_design_api), getString(R.string.design_api_text));
-      setTextWithLinks(view.findViewById(R.id.text_libraries), getString(R.string.libraries_text));
-      setTextWithLinks(view.findViewById(R.id.text_license), getString(R.string.license_text));
+//      setTextWithLinks(view.findViewById(R.id.text_application_info), getString(R.string.application_info_text, versionName));
+//      setTextWithLinks(view.findViewById(R.id.text_developer_info), getString(R.string.developer_info_text));
+//      setTextWithLinks(view.findViewById(R.id.text_design_api), getString(R.string.design_api_text));
+//      setTextWithLinks(view.findViewById(R.id.text_libraries), getString(R.string.libraries_text));
+//      setTextWithLinks(view.findViewById(R.id.text_license), getString(R.string.license_text));
       if (currentLanguage.equals(LocaleManager.LANGUAGE_ENGLISH)) {
         binding.englishButton.setIcon(drawable);
       } else {
