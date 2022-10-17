@@ -12,12 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.arean.ClimateRelief.LoginActivity;
-import com.arean.ClimateRelief.MainActivity;
-import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.RegisterActivity;
-import com.arean.ClimateRelief.RegisterFromAccountActivity;
 import com.arean.ClimateRelief.databinding.FragmentAccountBinding;
+import com.arean.ClimateRelief.ui.activity.LoginActivity;
+import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.activity.RegisterActivity;
 
 public class AccountFragment extends Fragment {
 

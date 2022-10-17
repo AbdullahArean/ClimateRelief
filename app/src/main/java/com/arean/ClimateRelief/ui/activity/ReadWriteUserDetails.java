@@ -1,4 +1,4 @@
-package com.arean.ClimateRelief;
+package com.arean.ClimateRelief.ui.activity;
 
 public class ReadWriteUserDetails {
     public String doB, gender, mobile;

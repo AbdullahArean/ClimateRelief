@@ -9,7 +9,7 @@ public class DonateViewModel extends ViewModel {
 
     public DonateViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Donate fragment");
+        mText.setValue("This Fragment of Showing geolocation\n of data is under construction!");
     }
 
     public LiveData<String> getText() {

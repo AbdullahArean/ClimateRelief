@@ -17,38 +17,38 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".ContactUsActivity"
+            android:name=".ui.activity.ContactUsActivity"
             android:exported="false" />
         <activity
-            android:name=".FormFillUpActivity"
+            android:name=".ui.activity.FormFillUpActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateEmailActivity"
+            android:name=".ui.activity.UpdateEmailActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateProfileActivity"
+            android:name=".ui.activity.UpdateProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadProfilePicActivity"
+            android:name=".ui.activity.UploadProfilePicActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".ui.activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterFromAccountActivity"
+            android:name=".ui.activity.RegisterFromAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.NoAction" />
         <activity
-            android:name=".UserProfileActivity"
+            android:name=".ui.activity.UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

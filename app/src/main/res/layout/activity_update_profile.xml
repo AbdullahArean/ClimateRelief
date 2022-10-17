@@ -8,7 +8,7 @@
     android:background="@color/light_gray"
     android:fillViewport="true"
 
-    tools:context=".UpdateProfileActivity">
+    tools:context=".ui.activity.UpdateProfileActivity">
 
 
         <RelativeLayout
