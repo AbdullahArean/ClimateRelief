@@ -175,7 +175,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         else if(id == R.id.menu_logout)
         {
-           authProfile.signOut();
+            authProfile.signOut();
             Toast.makeText(UserProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
 

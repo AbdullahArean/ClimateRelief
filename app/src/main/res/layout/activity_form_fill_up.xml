@@ -65,8 +65,8 @@
                     android:layout_height="wrap_content"
                     android:padding="6dp"
                     android:text="Select your division"
-                    android:textColor="@color/black"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
 
                 <Spinner
                     android:id="@+id/spinnerDivision"
@@ -220,22 +220,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="6dp"
-                    android:textColor="@color/black"
                     android:text="Female Count"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/editText_register_female_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-
                     android:layout_below="@id/textView_register_female_count"
-                    android:padding="6dp"
                     android:layout_marginTop="6dp"
+
                     android:hint="Type number of female members"
-                    android:textAlignment="center" />
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
 
             </RelativeLayout>
 
@@ -322,14 +322,14 @@
                     android:text="Do you have any domestic animal?" />
 
                 <RadioGroup
-                    android:id="@+id/radio_group_register_gender"
+                    android:id="@+id/radio_group_register_domestic_animal_presence"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textView_register_domestic_animal_count"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radio_female"
+                        android:id="@+id/radio_animal_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/purple_500"
@@ -338,7 +338,7 @@
                         android:textSize="16sp" />
 
                     <RadioButton
-                        android:id="@+id/radio_male"
+                        android:id="@+id/radio_animal_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -348,6 +348,65 @@
                         android:textSize="16sp" />
 
                 </RadioGroup>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_GetLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RL_DomesticAnimalCount"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+
+                <TextView
+                    android:id="@+id/textView_LatitudeCoordinate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="Latitude : 0.0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/textView_LongitudeCoordinate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_LatitudeCoordinate"
+                    android:padding="6dp"
+                    android:text="Longitude: 0.0 "
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+
+                <Button
+                    android:id="@+id/button_getLocation"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/textView_LongitudeCoordinate"
+                    android:text="Get Location" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_SubmitReliefForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RL_GetLocation"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+                <Button
+                    android:id="@+id/button_submit_relief_form"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Submit" />
+
             </RelativeLayout>
         </RelativeLayout>
 
