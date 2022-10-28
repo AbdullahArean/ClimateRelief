@@ -13,16 +13,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentAccountBinding;
-import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
+import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;
+import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
+import com.arean.ClimateRelief.utils.AppUtil;
 
 public class AccountFragment extends Fragment {
 
 
 
     private FragmentAccountBinding binding;
-    private Button buttonRegisterFromAccount;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,9 +37,6 @@ public class AccountFragment extends Fragment {
 
         binding = FragmentAccountBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textAccount;
-        accountViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         Button buttonRegisterFromAccount = (Button) root.findViewById(R.id.buttonRegisterFromAccount);
 
@@ -59,15 +58,31 @@ public class AccountFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
+
+            }
+        });
+        Button buttoncontactus = (Button) root.findViewById(R.id.button_contactus);
+
+        buttoncontactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ContactUsActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button buttonsettings = root.findViewById(R.id.buttonsettings);
+        buttonsettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAboutFragment();
             }
         });
 
 
-
-
-
-
         return root;
+    }
+    public void showAboutFragment() {
+       AppUtil.showFragment(new SettingsFragment(), requireActivity().getSupportFragmentManager(), true);
     }
 
     @Override

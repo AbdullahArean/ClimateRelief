@@ -20,7 +20,6 @@
             android:name=".ui.activity.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:label="@string/title_activity_fullscreen"
             android:theme="@style/Theme.MyApplication.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

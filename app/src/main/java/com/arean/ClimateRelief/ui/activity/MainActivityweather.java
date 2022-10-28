@@ -25,7 +25,7 @@ import com.arean.ClimateRelief.model.db.ItemHourlyDB;
 import com.arean.ClimateRelief.model.fivedayweather.FiveDayResponse;
 import com.arean.ClimateRelief.model.fivedayweather.ItemHourly;
 import com.arean.ClimateRelief.utils.service.ApiService;
-import com.arean.ClimateRelief.ui.fragment.AboutFragment;
+import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
 import com.arean.ClimateRelief.ui.fragment.MultipleDaysFragment;
 import com.arean.ClimateRelief.utils.ApiClient;
 import com.arean.ClimateRelief.utils.AppUtil;
@@ -156,7 +156,8 @@ public class MainActivityweather extends BaseActivity {
     binding.bar.setNavigationOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        showAboutFragment();
+
+        //showAboutFragment();
       }
     });
     typeface = Typeface.createFromAsset(getAssets(), "fonts/Vazir.ttf");
@@ -518,7 +519,7 @@ public class MainActivityweather extends BaseActivity {
   }
 
   public void showAboutFragment() {
-    AppUtil.showFragment(new AboutFragment(), getSupportFragmentManager(), true);
+    AppUtil.showFragment(new SettingsFragment(), getSupportFragmentManager(), true);
   }
 
   @Override

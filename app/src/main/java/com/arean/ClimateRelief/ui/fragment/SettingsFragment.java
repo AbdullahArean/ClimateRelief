@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.DialogFragment;
 
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.databinding.FragmentAboutBinding;
+import com.arean.ClimateRelief.databinding.FragmentSettingsBinding;
 import com.arean.ClimateRelief.ui.activity.MainActivityweather;
 import com.arean.ClimateRelief.utils.AppUtil;
 import com.arean.ClimateRelief.utils.LocaleManager;
@@ -28,16 +28,16 @@ import com.arean.ClimateRelief.utils.SharedPreferencesUtil;
 import com.arean.ClimateRelief.utils.ViewAnimation;
 
 
-public class AboutFragment extends DialogFragment {
+public class SettingsFragment extends DialogFragment {
 
   private Activity activity;
   private String currentLanguage;
-  private FragmentAboutBinding binding;
+  private FragmentSettingsBinding binding;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-    binding = FragmentAboutBinding.inflate(inflater, container, false);
+    binding = FragmentSettingsBinding.inflate(inflater, container, false);
     View view = binding.getRoot();
     initVariables(view);
     return view;
@@ -84,9 +84,9 @@ public class AboutFragment extends DialogFragment {
       @Override
       public void onClick(View v) {
         dismiss();
-        if (getFragmentManager() != null) {
-          getFragmentManager().popBackStack();
-        }
+//        if (getFragmentManager() != null) {
+//          getFragmentManager().popBackStack();
+//        }
       }
     });
     binding.englishButton.setOnClickListener(new View.OnClickListener() {
