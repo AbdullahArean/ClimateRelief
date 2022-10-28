@@ -13,7 +13,10 @@ import android.os.Looper;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
+import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.databinding.ActivitySplashscreenBinding;
 
 /**
@@ -115,11 +118,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         mVisible = true;
         mControlsView = binding.fullscreenContentControls;
         mContentView = binding.fullscreenContent;
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_animation);
+        mContentView.startAnimation(animation);
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //mContentView.clearAnimation();
+//                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_animation);
+//                mContentView.startAnimation(animation);
                 toggle();
             }
         });
