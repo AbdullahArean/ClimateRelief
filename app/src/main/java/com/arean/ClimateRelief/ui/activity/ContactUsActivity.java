@@ -3,7 +3,6 @@ package com.arean.ClimateRelief.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaParser;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;

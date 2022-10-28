@@ -1,8 +1,8 @@
 package com.arean.ClimateRelief.model;
 
 public class recyclerViewModel {
-    Integer stepImages;
-    String stepNames;
+    final Integer stepImages;
+    final String stepNames;
 
     public recyclerViewModel(Integer stepImages, String stepNames)
     {

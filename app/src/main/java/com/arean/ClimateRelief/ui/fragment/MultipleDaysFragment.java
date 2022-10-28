@@ -24,7 +24,7 @@ import com.arean.ClimateRelief.model.CityInfo;
 import com.arean.ClimateRelief.model.daysweather.ListItem;
 import com.arean.ClimateRelief.model.daysweather.MultipleDaysWeatherResponse;
 import com.arean.ClimateRelief.model.db.MultipleDaysWeather;
-import com.arean.ClimateRelief.service.ApiService;
+import com.arean.ClimateRelief.utils.service.ApiService;
 import com.arean.ClimateRelief.utils.ApiClient;
 import com.arean.ClimateRelief.utils.AppUtil;
 import com.arean.ClimateRelief.utils.Constants;
@@ -47,9 +47,7 @@ import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class MultipleDaysFragment extends DialogFragment {
-  private String defaultLang = "en";
   private CompositeDisposable disposable = new CompositeDisposable();
-  private FastAdapter<MultipleDaysWeather> mFastAdapter;
   private ItemAdapter<MultipleDaysWeather> mItemAdapter;
   private Activity activity;
   private Box<MultipleDaysWeather> multipleDaysWeatherBox;
@@ -115,7 +113,7 @@ public class MultipleDaysFragment extends DialogFragment {
         = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
     binding.recyclerView.setLayoutManager(layoutManager);
     mItemAdapter = new ItemAdapter<>();
-    mFastAdapter = FastAdapter.with(mItemAdapter);
+    FastAdapter<MultipleDaysWeather> mFastAdapter = FastAdapter.with(mItemAdapter);
     binding.recyclerView.setItemAnimator(new DefaultItemAnimator());
     binding.recyclerView.setAdapter(mFastAdapter);
   }
@@ -164,6 +162,7 @@ public class MultipleDaysFragment extends DialogFragment {
 
   private void requestWeathers(String cityName) {
     ApiService apiService = ApiClient.getClient().create(ApiService.class);
+    String defaultLang = "en";
     disposable.add(
         apiService.getMultipleDaysWeather(
             cityName, Constants.UNITS, defaultLang, 16, apiKey)

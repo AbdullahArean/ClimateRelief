@@ -8,15 +8,6 @@
     <string name="design_api_title">طراحی و API</string>
     <string name="application_info_title">اطلاعات برنامه</string>
     <string name="application_info_text">
-        <![CDATA[
-            <p>
-            <b>برنامه هواشناسی</b>
-            <br/>
-            نسخه برنامه: %1$s
-            <br/>
-            سورس برنامه در گیت‌هاب به این نشانسی در دسترس است
-            <br/><a href="https://github.com/bkhezry/weather">https://github.com/bkhezry/weather</a></p>
-        ]]>
     </string>
     <string name="current_label">هم‌اکنون</string>
     <string name="humidity_label">رطوبت</string>

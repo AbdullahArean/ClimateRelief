@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -27,8 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import org.checkerframework.checker.units.qual.A;
-
 public class UserProfileActivity extends AppCompatActivity {
 
 
@@ -37,13 +34,12 @@ public class UserProfileActivity extends AppCompatActivity {
     private String fullName, email, doB, gender, mobile;
     private ImageView imageView;
     private FirebaseAuth authProfile;
-    private Button btnLogOut;
 
-    String settings[] = {"Settings", "Languages", "Enable Dark Mode", "Privacy Policy"};
+    final String[] settings = {"Settings", "Languages", "Enable Dark Mode", "Privacy Policy"};
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
 
-    String support[] = {"Help", "Contact Us", "About Us"};
+    final String[] support = {"Help", "Contact Us", "About Us"};
     AutoCompleteTextView autoCompleteTextViewforHelpandSupport;
     ArrayAdapter<String> adapterItemsforHelpandSupport;
 
@@ -61,7 +57,7 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewDoB = findViewById(R.id.textView_show_dob);
         textViewGender = findViewById(R.id.textView_show_gender);
         textViewMobile = findViewById(R.id.textView_show_mobile);
-        btnLogOut = findViewById(R.id.buttonLogOut);
+        Button btnLogOut = findViewById(R.id.buttonLogOut);
 
 
         imageView = findViewById(R.id.imageView_profile_dp);

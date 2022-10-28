@@ -24,7 +24,7 @@ import com.arean.ClimateRelief.model.db.FiveDayWeather;
 import com.arean.ClimateRelief.model.db.ItemHourlyDB;
 import com.arean.ClimateRelief.model.fivedayweather.FiveDayResponse;
 import com.arean.ClimateRelief.model.fivedayweather.ItemHourly;
-import com.arean.ClimateRelief.service.ApiService;
+import com.arean.ClimateRelief.utils.service.ApiService;
 import com.arean.ClimateRelief.ui.fragment.AboutFragment;
 import com.arean.ClimateRelief.ui.fragment.MultipleDaysFragment;
 import com.arean.ClimateRelief.utils.ApiClient;
@@ -62,7 +62,6 @@ import retrofit2.HttpException;
 
 public class MainActivityweather extends BaseActivity {
 
-  private FastAdapter<FiveDayWeather> mFastAdapter;
   private ItemAdapter<FiveDayWeather> mItemAdapter;
   private CompositeDisposable disposable = new CompositeDisposable();
   private String defaultLang = "en";
@@ -199,7 +198,7 @@ public class MainActivityweather extends BaseActivity {
         = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
     binding.contentMainLayout.recyclerView.setLayoutManager(layoutManager);
     mItemAdapter = new ItemAdapter<>();
-    mFastAdapter = FastAdapter.with(mItemAdapter);
+    FastAdapter<FiveDayWeather> mFastAdapter = FastAdapter.with(mItemAdapter);
     binding.contentMainLayout.recyclerView.setItemAnimator(new DefaultItemAnimator());
     binding.contentMainLayout.recyclerView.setAdapter(mFastAdapter);
     binding.contentMainLayout.recyclerView.setFocusable(false);

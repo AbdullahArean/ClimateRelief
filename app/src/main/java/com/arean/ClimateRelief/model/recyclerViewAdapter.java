@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.ViewHolder> {
 
-    ArrayList<recyclerViewModel> recyclerViewModels;
-    Context context;
+    final ArrayList<recyclerViewModel> recyclerViewModels;
+    final Context context;
     public recyclerViewAdapter(Context context, ArrayList<recyclerViewModel> recyclerViewModels)
     {
         this.context = context;
@@ -43,9 +43,9 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         return recyclerViewModels.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView recycler_view_imageView;
-        TextView recycler_view_image_textView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        final ImageView recycler_view_imageView;
+        final TextView recycler_view_image_textView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

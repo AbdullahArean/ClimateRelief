@@ -40,7 +40,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.listener.OnSetApiKeyEventListener;
+import com.arean.ClimateRelief.utils.listener.OnSetApiKeyEventListener;
 import com.github.pwittchen.prefser.library.rx2.Prefser;
 
 import java.lang.reflect.InvocationTargetException;

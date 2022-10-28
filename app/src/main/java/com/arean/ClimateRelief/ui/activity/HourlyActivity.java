@@ -37,7 +37,6 @@ import io.objectbox.query.Query;
 import io.objectbox.reactive.DataObserver;
 
 public class HourlyActivity extends BaseActivity {
-  private FastAdapter<ItemHourlyDB> mFastAdapter;
   private ItemAdapter<ItemHourlyDB> mItemAdapter;
   private FiveDayWeather fiveDayWeather;
   private Box<ItemHourlyDB> itemHourlyDBBox;
@@ -101,7 +100,7 @@ public class HourlyActivity extends BaseActivity {
         = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
     binding.recyclerView.setLayoutManager(layoutManager);
     mItemAdapter = new ItemAdapter<>();
-    mFastAdapter = FastAdapter.with(mItemAdapter);
+    FastAdapter<ItemHourlyDB> mFastAdapter = FastAdapter.with(mItemAdapter);
     binding.recyclerView.setItemAnimator(new DefaultItemAnimator());
     binding.recyclerView.setAdapter(mFastAdapter);
   }

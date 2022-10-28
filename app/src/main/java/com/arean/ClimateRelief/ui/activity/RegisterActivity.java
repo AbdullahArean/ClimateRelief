@@ -40,7 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup radioGroupRegisterGender;
     private RadioButton radioButtonRegisterSelectedGender;
     private DatePickerDialog picker;
-    private ImageView back;
     private static final String TAG = "RegisterActivity";
 
     @Override
@@ -78,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                 picker.show();
             }
         });
-        back= findViewById(R.id.back_arrow_reg);
+        ImageView back = findViewById(R.id.back_arrow_reg);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

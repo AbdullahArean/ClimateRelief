@@ -18,7 +18,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -78,8 +77,6 @@ public class FormFillUpActivity extends AppCompatActivity {
     TextView textView_LatitudeCoordinate, textView_LongitudeCoordinate;
 
 
-    private FirebaseAuth authProfile;
-    private FirebaseFirestore fstore;
     private FusedLocationProviderClient fusedLocationProviderClient;
     String userID;
 
@@ -475,8 +472,8 @@ public class FormFillUpActivity extends AppCompatActivity {
 
     public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, String userLocationLatitude, String userLocationLongitude, String userNIDNo, String userBkashContactNo) {
 
-        authProfile = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
+        FirebaseAuth authProfile = FirebaseAuth.getInstance();
+        FirebaseFirestore fstore = FirebaseFirestore.getInstance();
 
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
         userID  = firebaseUser.getUid();

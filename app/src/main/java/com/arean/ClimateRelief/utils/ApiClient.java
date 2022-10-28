@@ -16,7 +16,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
   private static Retrofit retrofit = null;
-  private static int REQUEST_TIMEOUT = 60;
   private static OkHttpClient okHttpClient;
 
   /**
@@ -42,6 +41,7 @@ public class ApiClient {
    * init instance of {@link OkHttpClient}
    */
   private static void initOkHttp() {
+    int REQUEST_TIMEOUT = 60;
     OkHttpClient.Builder httpClient = new OkHttpClient().newBuilder()
         .connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
         .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)

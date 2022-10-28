@@ -31,7 +31,7 @@ public final class SnackbarUtil {
   private static final int COLOR_ERROR = 0xFFFF0000;
   private static final int COLOR_MESSAGE = 0xFFFFFFFF;
   private static WeakReference<Snackbar> sReference;
-  private View view;
+  private final View view;
   private CharSequence message;
   private int messageColor;
   private int bgColor;

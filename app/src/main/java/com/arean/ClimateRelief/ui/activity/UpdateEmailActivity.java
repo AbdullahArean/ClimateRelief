@@ -26,7 +26,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class UpdateEmailActivity extends AppCompatActivity {
 
     private FirebaseAuth authProfile;
-    private FirebaseUser firebaseUser;
     private TextView textViewAuthenticated;
     private String userOldEmail, userNewEmail, userPwd;
     private Button buttonUpdateEmail;
@@ -47,7 +46,7 @@ public class UpdateEmailActivity extends AppCompatActivity {
         editTextNewEmail.setEnabled(false);
 
         authProfile = FirebaseAuth.getInstance();
-        firebaseUser = authProfile.getCurrentUser();
+        FirebaseUser firebaseUser = authProfile.getCurrentUser();
 
         userOldEmail = firebaseUser.getEmail();
         TextView textViewOldEmail = findViewById(R.id.textView_update_email_old);

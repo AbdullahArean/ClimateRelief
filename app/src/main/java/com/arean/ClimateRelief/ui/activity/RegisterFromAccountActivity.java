@@ -3,7 +3,6 @@ package com.arean.ClimateRelief.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.arean.ClimateRelief.R;
 

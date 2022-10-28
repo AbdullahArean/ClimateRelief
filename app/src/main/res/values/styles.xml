@@ -42,7 +42,7 @@
 
     <style name="MaterialSearchViewStyle">
         <!-- Background for the search bar -->
-<!--        <item name="searchBackground">?attr/colorPrimary</item>-->
+        <!--        <item name="searchBackground">?attr/colorPrimary</item>-->
 
         <!-- Change text color for edit text. This will also be the color of the cursor -->
         <item name="android:textColor">@android:color/black</item>
@@ -70,5 +70,14 @@
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementsUseOverlay">true</item>
+    </style>
+
+    <style name="Widget.Theme.MyApplication.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.MyApplication.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>

@@ -7,7 +7,6 @@ public class DateConverter {
   private int irDay; // Day part of a Iranian date
   private int gYear; // Year part of a Gregorian date
   private int gMonth; // Month part of a Gregorian date
-  private int juMonth; // Month part of a Julian date
   private int leap; // Number of years since the last leap year (0 to 4)
   private int JDN; // Julian Day Number
   private int march; // The march day of Farvardin the first (First day of
@@ -203,7 +202,8 @@ public class DateConverter {
   private void JDNToJulian() {
     int j = 4 * JDN + 139361631;
     int i = ((j % 1461) / 4) * 5 + 308;
-    juMonth = ((i / 153) % 12) + 1;
+    // Month part of a Julian date
+    int juMonth = ((i / 153) % 12) + 1;
   }
 
   /**

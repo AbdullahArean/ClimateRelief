@@ -10,11 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.arean.ClimateRelief.databinding.FragmentClaimBinding;
 import com.arean.ClimateRelief.databinding.FragmentDonateBinding;
-import com.arean.ClimateRelief.databinding.FragmentHomeBinding;
-import com.arean.ClimateRelief.ui.claim.ClaimViewModel;
-import com.arean.ClimateRelief.ui.home.HomeViewModel;
 
 
 public class DonateFragment extends Fragment {

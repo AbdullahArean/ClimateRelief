@@ -139,7 +139,7 @@ public class FiveDayWeather extends AbstractItem<FiveDayWeather, FiveDayWeather.
 
   protected static class MyViewHolder extends FastAdapter.ViewHolder<FiveDayWeather> {
     Context context;
-    WeatherDayItemBinding binding;
+    final WeatherDayItemBinding binding;
 
     MyViewHolder(View view) {
       super(view);

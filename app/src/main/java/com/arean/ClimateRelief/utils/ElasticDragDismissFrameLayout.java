@@ -35,7 +35,7 @@ public class ElasticDragDismissFrameLayout extends FrameLayout {
   private boolean draggingUp = false;
   private int mLastActionEvent;
 
-  private Context context;
+  private final Context context;
   private List<ElasticDragDismissCallback> callbacks;
 
   public ElasticDragDismissFrameLayout(Context context) {

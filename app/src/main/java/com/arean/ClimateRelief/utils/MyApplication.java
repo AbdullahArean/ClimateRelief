@@ -7,7 +7,6 @@ import android.content.res.Configuration;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.arean.ClimateRelief.BuildConfig;
-import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.model.db.MyObjectBox;
 
 import io.github.inflationx.calligraphy3.CalligraphyConfig;

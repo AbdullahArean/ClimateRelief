@@ -1,4 +1,4 @@
-package com.arean.ClimateRelief.service;
+package com.arean.ClimateRelief.utils.service;
 
 import com.arean.ClimateRelief.model.currentweather.CurrentWeatherResponse;
 import com.arean.ClimateRelief.model.daysweather.MultipleDaysWeatherResponse;

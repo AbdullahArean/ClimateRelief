@@ -21,9 +21,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    private Button buttonPwdReset;
     private EditText editTextPwdResetEmail;
-    private FirebaseAuth authProfile;
     private final static String TAG = "ForgotPasswordActivity";
 
     @Override
@@ -32,7 +30,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         editTextPwdResetEmail = findViewById(R.id.editText_password_reset_email);
-        buttonPwdReset = findViewById(R.id.button_password_reset);
+        Button buttonPwdReset = findViewById(R.id.button_password_reset);
 
         buttonPwdReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +59,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     private void resetPassword(String email)
     {
-        authProfile = FirebaseAuth.getInstance();
+        FirebaseAuth authProfile = FirebaseAuth.getInstance();
         authProfile.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

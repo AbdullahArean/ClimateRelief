@@ -86,7 +86,7 @@ public class ItemHourlyDB extends AbstractItem<ItemHourlyDB, ItemHourlyDB.MyView
   protected static class MyViewHolder extends FastAdapter.ViewHolder<ItemHourlyDB> {
     View view;
     Context context;
-    WeatherHourlyItemBinding binding;
+    final WeatherHourlyItemBinding binding;
 
     MyViewHolder(View view) {
       super(view);
