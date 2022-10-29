@@ -31,10 +31,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.ContactUsActivity"
+            android:name=".ui.activity.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.FormFillUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ContactUsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.UpdateEmailActivity"

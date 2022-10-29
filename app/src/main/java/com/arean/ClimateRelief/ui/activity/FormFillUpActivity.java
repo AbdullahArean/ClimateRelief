@@ -124,7 +124,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                     case R.id.navigation_donate:
                         return true;
                     case R.id.navigation_account:
-                        startActivity(new Intent(getApplicationContext(),ContactUsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

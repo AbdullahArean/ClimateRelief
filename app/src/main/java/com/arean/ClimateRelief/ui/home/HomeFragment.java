@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentHomeBinding;
-import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
+import com.arean.ClimateRelief.ui.activity.AccountActivity;
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.ui.activity.MainActivityweather;
 
@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
         buttonContactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ContactUsActivity.class);
+                Intent intent = new Intent(getActivity(), AccountActivity.class);
                 Intent intent2 = new Intent(getActivity(), MainActivityweather.class);
                 startActivity(intent2);
             }

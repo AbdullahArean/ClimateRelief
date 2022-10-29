@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentAccountBinding;
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
+import com.arean.ClimateRelief.ui.activity.AccountActivity;
 import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
@@ -66,7 +65,7 @@ public class AccountFragment extends Fragment {
         buttoncontactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ContactUsActivity.class);
+                Intent intent = new Intent(getActivity(), AccountActivity.class);
                 startActivity(intent);
             }
         });
