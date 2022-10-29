@@ -44,6 +44,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
+
         editTextUpdateDoB = findViewById(R.id.editText_update_profile_dob);
         editTextUpdateName = findViewById(R.id.editText_update_profile_full_name);
         editTextUpdateMobile = findViewById(R.id.editText_update_profile_mobile);
