@@ -5,11 +5,12 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
-    <fragment
+    <activity
         android:id="@+id/navigation_home"
-        android:name="com.arean.ClimateRelief.ui.home.HomeFragment"
+        android:name="com.arean.ClimateRelief.ui.activity.MainActivityweather"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/activity_main_weather" />
+
 
     <fragment
         android:id="@+id/navigation_donate"

@@ -36,6 +36,7 @@ import com.arean.ClimateRelief.utils.SnackbarUtil;
 import com.arean.ClimateRelief.utils.TextViewFactory;
 import com.bumptech.glide.Glide;
 import com.github.pwittchen.prefser.library.rx2.Prefser;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.IAdapter;
@@ -86,6 +87,37 @@ public class MainActivityweather extends BaseActivity {
     super.onCreate(savedInstanceState);
     binding = ActivityMainWeatherBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
+    // Initialize and assign variable
+    BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+    // Set Home selected
+    bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+
+    // Perform item selected listener
+    bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+      @Override
+      public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch(item.getItemId())
+        {
+          case R.id.navigation_home:
+            startActivity(new Intent(getApplicationContext(),MainActivityweather.class));
+            overridePendingTransition(0,0);
+            return true;
+          case R.id.navigation_claim:
+            startActivity(new Intent(getApplicationContext(),FormFillUpActivity.class));
+            overridePendingTransition(0,0);
+            return true;
+          case R.id.navigation_donate:
+            return true;
+          case R.id.navigation_account:
+            startActivity(new Intent(getApplicationContext(),ContactUsActivity.class));
+            overridePendingTransition(0,0);
+            return true;
+        }
+        return false;
+      }
+    });
     //setSupportActionBar(binding.toolbarLayout.toolbar);
     initSearchView();
     initValues();

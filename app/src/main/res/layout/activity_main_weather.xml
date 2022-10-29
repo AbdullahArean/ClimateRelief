@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/next_15_days_label"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="@android:color/white"
@@ -52,6 +53,19 @@
                 app:backgroundTint="@color/material_blue"
                 app:layout_anchor="@id/bar"
                 app:strokeColor="@android:color/white" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                app:itemBackground="@color/material_blue"
+                app:itemIconTint="@drawable/selector"
+                app:itemTextColor="@drawable/selector"
+                app:layout_anchor="@+id/next_days_button"
+                app:layout_anchorGravity="bottom|center"
+                app:menu="@menu/bottom_nav_menu" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

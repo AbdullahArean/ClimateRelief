@@ -106,5 +106,7 @@
     <string name="night_mode_label">Night Mode</string>
     <string name="title_activity_fullscreen">SplashscreenActivity</string>
     <string name="dummy_content">Climate Relief\n Easy Relief For Everyone</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
