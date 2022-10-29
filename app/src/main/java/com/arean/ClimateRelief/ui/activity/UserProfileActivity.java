@@ -17,6 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.AccountActivity;
+import com.arean.ClimateRelief.ui.FormFillUpActivity;
+import com.arean.ClimateRelief.ui.MainActivityweather;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -50,6 +54,49 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        authProfile = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = authProfile.getCurrentUser();
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+//
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.navigation_account);
+//
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+
+            switch(item.getItemId())
+            {
+                case R.id.navigation_home:
+                    startActivity(new Intent(getApplicationContext(), MainActivityweather.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navigation_claim:
+                    startActivity(new Intent(getApplicationContext(), FormFillUpActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navigation_donate:
+                    return true;
+                case R.id.navigation_account:
+
+//                    if (authProfile.getCurrentUser()!=null)
+//                    {
+//                        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+//                    }
+//                    else
+//                    {
+//                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+//
+//                    }
+//                    overridePendingTransition(0,0);
+
+
+                    return true;
+            }
+            return false;
+        });
+
 
         textViewWelcome = findViewById(R.id.textView_show_welcome);
         textViewFullName = findViewById(R.id.textView_show_full_name);
@@ -83,8 +130,7 @@ public class UserProfileActivity extends AppCompatActivity {
         autoCompleteTextViewforHelpandSupport.setAdapter(adapterItemsforHelpandSupport);
 
 
-        authProfile = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = authProfile.getCurrentUser();
+
 
         if(firebaseUser == null)
         {
@@ -151,6 +197,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     Uri uri = firebaseUser.getPhotoUrl();
 
                     Picasso.with(UserProfileActivity.this).load(uri).into(imageView);
+
 
                 }
 
@@ -237,5 +284,12 @@ public class UserProfileActivity extends AppCompatActivity {
             Toast.makeText(UserProfileActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+        startActivity(intent);
+        finish();
     }
 }

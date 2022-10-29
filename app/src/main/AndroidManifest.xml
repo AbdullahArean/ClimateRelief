@@ -29,7 +29,10 @@
         </activity>
         <activity
             android:name=".ui.AccountActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.home.MainActivityweather">
+
+        </activity>
         <activity
             android:name=".ui.FormFillUpActivity"
             android:exported="false" />
@@ -41,7 +44,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.UpdateProfileActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
+
         <activity
             android:name=".ui.activity.UploadProfilePicActivity"
             android:exported="false" />
@@ -60,7 +66,8 @@
             android:theme="@style/Theme.NoAction" />
         <activity
             android:name=".ui.activity.UserProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.home.MainActivityweather"/>
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"

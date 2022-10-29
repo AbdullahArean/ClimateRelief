@@ -26,6 +26,7 @@ import com.arean.ClimateRelief.model.fivedayweather.FiveDayResponse;
 import com.arean.ClimateRelief.model.fivedayweather.ItemHourly;
 import com.arean.ClimateRelief.ui.activity.BaseActivity;
 import com.arean.ClimateRelief.ui.activity.HourlyActivity;
+import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.arean.ClimateRelief.utils.service.ApiService;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
 import com.arean.ClimateRelief.ui.fragment.MultipleDaysFragment;
@@ -39,6 +40,7 @@ import com.arean.ClimateRelief.utils.TextViewFactory;
 import com.bumptech.glide.Glide;
 import com.github.pwittchen.prefser.library.rx2.Prefser;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.IAdapter;
@@ -83,12 +85,14 @@ public class MainActivityweather extends BaseActivity {
   private ActivityMainWeatherBinding binding;
   private int[] colors;
   private int[] colorsAlpha;
+  private FirebaseAuth authProfile;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     binding = ActivityMainWeatherBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
+    authProfile = FirebaseAuth.getInstance();
     // Initialize and assign variable
     BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
@@ -113,7 +117,15 @@ public class MainActivityweather extends BaseActivity {
           case R.id.navigation_donate:
             return true;
           case R.id.navigation_account:
-            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+            if (authProfile.getCurrentUser()!=null)
+            {
+              startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+            }
+            else
+            {
+              startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+            }
             overridePendingTransition(0,0);
             return true;
         }

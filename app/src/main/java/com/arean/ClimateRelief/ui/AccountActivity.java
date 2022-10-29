@@ -10,20 +10,26 @@ import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
 import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;
+import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AccountActivity extends AppCompatActivity {
 
     EditText editTextContactEmail, editTextContactEmailSubject, editTextContactEmailMessage;
     Button buttonContactUsSendMail;
+    private FirebaseAuth authProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        authProfile = FirebaseAuth.getInstance();
+            setContentView(R.layout.activity_account);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
 //
         // Set Home selected
   bottomNavigationView.setSelectedItemId(R.id.navigation_account);
@@ -44,8 +50,19 @@ public class AccountActivity extends AppCompatActivity {
                 case R.id.navigation_donate:
                     return true;
                 case R.id.navigation_account:
-                    startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+                    if (authProfile.getCurrentUser()!=null)
+                    {
+                        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                    }
+                    else
+                    {
+                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+                    }
                     overridePendingTransition(0,0);
+
+
                     return true;
             }
             return false;
@@ -79,5 +96,4 @@ public class AccountActivity extends AppCompatActivity {
         buttonsettings.setOnClickListener(view -> getSupportFragmentManager().beginTransaction().add(R.id.settings_container,new SettingsFragment()).commit());
 
     }
-
 }

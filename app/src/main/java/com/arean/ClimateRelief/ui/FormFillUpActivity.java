@@ -18,6 +18,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +34,8 @@ import android.widget.Toast;
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.model.recyclerViewAdapter;
 import com.arean.ClimateRelief.model.recyclerViewModel;
+import com.arean.ClimateRelief.ui.activity.RegisterActivity;
+import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -77,6 +80,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     RadioButton userAnimalPresenceRadioButton;
     Button button_getLocation;
     TextView textView_LatitudeCoordinate, textView_LongitudeCoordinate;
+    private FirebaseAuth authProfile;
 
 
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -101,6 +105,7 @@ public class FormFillUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form_fill_up);
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        authProfile= FirebaseAuth.getInstance();
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.navigation_claim);
@@ -124,7 +129,15 @@ public class FormFillUpActivity extends AppCompatActivity {
                     case R.id.navigation_donate:
                         return true;
                     case R.id.navigation_account:
-                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                        if (authProfile.getCurrentUser()!=null)
+                        {
+                            startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                        }
+                        else
+                        {
+                            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+                        }
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -284,8 +297,24 @@ public class FormFillUpActivity extends AppCompatActivity {
                 userBkashContactNo = editTextSubmitUserBkashContactNo.getText().toString();
                 userNIDNo = editTextSubmitUserNIDNo.getText().toString();
 
-                storeDataIntoFirebase(userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude, userNIDNo, userBkashContactNo);
+                if(TextUtils.isEmpty(userBkashContactNo))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please enter Bkash Contact No", Toast.LENGTH_SHORT).show();
+                    editTextSubmitUserBkashContactNo.setError("password required");
+                    editTextSubmitUserBkashContactNo.requestFocus();
+                }
+                else if(TextUtils.isEmpty(userNIDNo))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please enter NID No", Toast.LENGTH_SHORT).show();
+                    editTextSubmitUserNIDNo.setError("NID required");
+                    editTextSubmitUserNIDNo.requestFocus();
 
+                }
+                else
+                {
+                    storeDataIntoFirebase(userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude, userNIDNo, userBkashContactNo);
+
+                }
             }
         });
 
