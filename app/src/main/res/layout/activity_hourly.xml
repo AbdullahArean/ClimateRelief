@@ -20,7 +20,7 @@
             android:gravity="bottom"
             android:layoutDirection="locale"
             android:orientation="vertical"
-            tools:context=".ui.activity.MainActivityweather">
+            tools:context=".ui.MainActivityweather">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view"

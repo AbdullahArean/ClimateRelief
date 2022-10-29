@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentAccountBinding;
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.ui.activity.AccountActivity;
+import com.arean.ClimateRelief.ui.AccountActivity;
 import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;

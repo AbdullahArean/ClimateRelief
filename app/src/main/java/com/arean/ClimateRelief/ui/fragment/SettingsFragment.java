@@ -20,7 +20,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.databinding.FragmentSettingsBinding;
-import com.arean.ClimateRelief.ui.activity.MainActivityweather;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.arean.ClimateRelief.utils.AppUtil;
 import com.arean.ClimateRelief.utils.LocaleManager;
 import com.arean.ClimateRelief.utils.MyApplication;

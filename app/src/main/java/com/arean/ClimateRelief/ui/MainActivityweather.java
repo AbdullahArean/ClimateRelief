@@ -1,4 +1,4 @@
-package com.arean.ClimateRelief.ui.activity;
+package com.arean.ClimateRelief.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -24,6 +24,8 @@ import com.arean.ClimateRelief.model.db.FiveDayWeather;
 import com.arean.ClimateRelief.model.db.ItemHourlyDB;
 import com.arean.ClimateRelief.model.fivedayweather.FiveDayResponse;
 import com.arean.ClimateRelief.model.fivedayweather.ItemHourly;
+import com.arean.ClimateRelief.ui.activity.BaseActivity;
+import com.arean.ClimateRelief.ui.activity.HourlyActivity;
 import com.arean.ClimateRelief.utils.service.ApiService;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
 import com.arean.ClimateRelief.ui.fragment.MultipleDaysFragment;
@@ -105,7 +107,7 @@ public class MainActivityweather extends BaseActivity {
             overridePendingTransition(0,0);
             return true;
           case R.id.navigation_claim:
-            startActivity(new Intent(getApplicationContext(),FormFillUpActivity.class));
+            startActivity(new Intent(getApplicationContext(), FormFillUpActivity.class));
             overridePendingTransition(0,0);
             return true;
           case R.id.navigation_donate:

@@ -1,4 +1,4 @@
-package com.arean.ClimateRelief.ui.activity;
+package com.arean.ClimateRelief.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -113,7 +113,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.navigation_home:
-                        startActivity(new Intent(getApplicationContext(),MainActivityweather.class));
+                        startActivity(new Intent(getApplicationContext(), MainActivityweather.class));
                         overridePendingTransition(0,0);
                         return true;
 

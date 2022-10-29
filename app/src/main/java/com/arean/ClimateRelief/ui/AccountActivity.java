@@ -1,13 +1,15 @@
-package com.arean.ClimateRelief.ui.activity;
+package com.arean.ClimateRelief.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
+import com.arean.ClimateRelief.ui.activity.LoginActivity;
+import com.arean.ClimateRelief.ui.activity.RegisterActivity;
 import com.arean.ClimateRelief.ui.fragment.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,11 +34,11 @@ public class AccountActivity extends AppCompatActivity {
             switch(item.getItemId())
             {
                 case R.id.navigation_home:
-                    startActivity(new Intent(getApplicationContext(),MainActivityweather.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivityweather.class));
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.navigation_claim:
-                    startActivity(new Intent(getApplicationContext(),FormFillUpActivity.class));
+                    startActivity(new Intent(getApplicationContext(), FormFillUpActivity.class));
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.navigation_donate:

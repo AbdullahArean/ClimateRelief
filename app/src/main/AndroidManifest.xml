@@ -31,10 +31,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.AccountActivity"
+            android:name=".ui.AccountActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.FormFillUpActivity"
+            android:name=".ui.FormFillUpActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.ContactUsActivity"
@@ -79,7 +79,7 @@
             android:exported="true"
             android:theme="@style/TransitionTheme" />
         <activity
-            android:name=".ui.activity.MainActivityweather"
+            android:name=".ui.MainActivityweather"
             android:exported="true" /> <!-- android:screenOrientation="portrait" -->
         <!-- android:windowSoftInputMode="stateHidden"> -->
         <!-- <intent-filter> -->

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentClaimBinding;
-import com.arean.ClimateRelief.ui.activity.FormFillUpActivity;
+import com.arean.ClimateRelief.ui.FormFillUpActivity;
 import com.arean.ClimateRelief.R;
 
 public class ClaimFragment extends Fragment {

@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.arean.ClimateRelief.databinding.FragmentHomeBinding;
-import com.arean.ClimateRelief.ui.activity.AccountActivity;
+import com.arean.ClimateRelief.ui.AccountActivity;
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.ui.activity.MainActivityweather;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 
 
 public class HomeFragment extends Fragment {

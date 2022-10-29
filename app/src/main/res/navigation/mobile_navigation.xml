@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/navigation_home"
-        android:name="com.arean.ClimateRelief.ui.activity.MainActivityweather"
+        android:name="com.arean.ClimateRelief.ui.MainActivityweather"
         android:label="@string/title_home"
         tools:layout="@layout/activity_main_weather" />
 
@@ -20,13 +20,13 @@
 
     <activity
         android:id="@+id/navigation_claim"
-        android:name="com.arean.ClimateRelief.ui.activity.FormFillUpActivity"
+        android:name="com.arean.ClimateRelief.ui.FormFillUpActivity"
         android:label="@string/title_claim"
         tools:layout="@layout/activity_form_fill_up" />
 
     <activity
         android:id="@+id/navigation_account"
-        android:name="com.arean.ClimateRelief.ui.activity.AccountActivity"
+        android:name="com.arean.ClimateRelief.ui.AccountActivity"
         android:label="@string/title_account"
         tools:layout="@layout/activity_account" />
 </navigation>

@@ -13,7 +13,7 @@
         android:clickable="true"
         android:focusable="true"
         android:orientation="vertical"
-        tools:context=".ui.activity.MainActivityweather">
+        tools:context=".ui.MainActivityweather">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/close_button"
