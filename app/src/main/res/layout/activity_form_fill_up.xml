@@ -513,7 +513,7 @@
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_gravity="bottom"
+            android:layout_gravity="start"
             app:itemBackground="@color/material_blue"
             app:itemIconTint="@drawable/selector"
             app:itemTextColor="@drawable/selector"

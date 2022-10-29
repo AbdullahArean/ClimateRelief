@@ -75,7 +75,7 @@ public class AccountActivity extends AppCompatActivity {
         });
         Button buttonsettings = findViewById(R.id.buttonsettings);
         buttonsettings.setOnClickListener(view -> getSupportFragmentManager().beginTransaction().add(R.id.settings_container,new SettingsFragment()).commit());
-        
+
     }
 
 }

@@ -18,15 +18,15 @@
         android:label="@string/title_donate"
         tools:layout="@layout/fragment_donate" />
 
-    <fragment
+    <activity
         android:id="@+id/navigation_claim"
-        android:name="com.arean.ClimateRelief.ui.claim.ClaimFragment"
+        android:name="com.arean.ClimateRelief.ui.activity.FormFillUpActivity"
         android:label="@string/title_claim"
-        tools:layout="@layout/fragment_claim" />
+        tools:layout="@layout/activity_form_fill_up" />
 
-    <fragment
+    <activity
         android:id="@+id/navigation_account"
-        android:name="com.arean.ClimateRelief.ui.account.AccountFragment"
+        android:name="com.arean.ClimateRelief.ui.activity.AccountActivity"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/activity_account" />
 </navigation>
