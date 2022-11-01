@@ -18,16 +18,8 @@
         android:id="@+id/menu_update_email"
         />
 
-    <item android:title="Settings"
-        android:id="@+id/menu_settings"
-        />
-
     <item android:title="Change Password"
         android:id="@+id/menu_change_password"
-        />
-
-    <item android:title="Delete Profile"
-        android:id="@+id/menu_delete_profile"
         />
 
     <item android:title="Logout"

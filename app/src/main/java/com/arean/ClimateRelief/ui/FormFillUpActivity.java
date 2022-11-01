@@ -34,7 +34,7 @@ import android.widget.Toast;
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.model.recyclerViewAdapter;
 import com.arean.ClimateRelief.model.recyclerViewModel;
-import com.arean.ClimateRelief.ui.activity.RegisterActivity;
+import com.arean.ClimateRelief.ui.activity.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -84,7 +84,7 @@ public class FormFillUpActivity extends AppCompatActivity {
 
 
     private FusedLocationProviderClient fusedLocationProviderClient;
-    String userID;
+    String userID,userName;
 
 
     RecyclerView recyclerView;
@@ -127,6 +127,8 @@ public class FormFillUpActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_donate:
+                        startActivity(new Intent(getApplicationContext(), ClaimerListActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_account:
                         if (authProfile.getCurrentUser()!=null)
@@ -284,6 +286,8 @@ public class FormFillUpActivity extends AppCompatActivity {
                 editTextSubmitUserSeniorCitizenCount = findViewById(R.id.editText_register_senior_citizen_count);
                 editTextSubmitUserBkashContactNo = findViewById(R.id.editText_register_bkashContactNo);
                 editTextSubmitUserNIDNo = findViewById(R.id.editText_register_nid);
+                textView_LatitudeCoordinate = findViewById(R.id.textView_LatitudeCoordinate);
+                textView_LongitudeCoordinate= findViewById(R.id.textView_LongitudeCoordinate);
 
                 userFemaleCount = editTextSubmitUserFemaleCount.getText().toString();
                 userChildrenCount = editTextSubmitUserChildrenCount.getText().toString();
@@ -291,24 +295,71 @@ public class FormFillUpActivity extends AppCompatActivity {
                 userAnimalPresenceRadioGroup = (RadioGroup) findViewById(R.id.radio_group_register_domestic_animal_presence);
                 int selectedID = userAnimalPresenceRadioGroup.getCheckedRadioButtonId();
                 userAnimalPresenceRadioButton = (RadioButton) findViewById(selectedID);
-                userDomesticAnimalPresence = userAnimalPresenceRadioButton.getText().toString();
-                userLocationLatitude = textView_LatitudeCoordinate.getText().toString();
-                userLocationLongitude = textView_LongitudeCoordinate.getText().toString();
+                if(selectedID<=0)
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please let us know if you have domestic animal or not", Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                    userDomesticAnimalPresence = userAnimalPresenceRadioButton.getText().toString();
+
+                }
+
+                userLocationLatitude = textView_LatitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", "");
+                System.out.println(userLocationLatitude);
+                userLocationLongitude = textView_LongitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", "");
                 userBkashContactNo = editTextSubmitUserBkashContactNo.getText().toString();
                 userNIDNo = editTextSubmitUserNIDNo.getText().toString();
 
-                if(TextUtils.isEmpty(userBkashContactNo))
+                if(TextUtils.isEmpty(userBkashContactNo) || userBkashContactNo.length()!=11)
                 {
-                    Toast.makeText(FormFillUpActivity.this, "Please enter Bkash Contact No", Toast.LENGTH_SHORT).show();
-                    editTextSubmitUserBkashContactNo.setError("password required");
+                    Toast.makeText(FormFillUpActivity.this, "Bkash Contact No must be specified and must be 11 digits long", Toast.LENGTH_SHORT).show();
                     editTextSubmitUserBkashContactNo.requestFocus();
                 }
-                else if(TextUtils.isEmpty(userNIDNo))
+                else if(TextUtils.isEmpty(userNIDNo) || userNIDNo.length()!=10)
                 {
-                    Toast.makeText(FormFillUpActivity.this, "Please enter NID No", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FormFillUpActivity.this, "NID No cannot be empty and must be 10 digit long", Toast.LENGTH_SHORT).show();
                     editTextSubmitUserNIDNo.setError("NID required");
                     editTextSubmitUserNIDNo.requestFocus();
 
+                }
+
+                else if(Objects.equals(userLocationLatitude, "0.0") && Objects.equals(userLocationLongitude, "0.0"))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Specify your location", Toast.LENGTH_SHORT).show();
+
+
+                }
+
+                else if(TextUtils.isEmpty(userChildrenCount))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please specify number of children", Toast.LENGTH_SHORT).show();
+                    editTextSubmitUserChildrenCount.setError("Children Count Required");
+                    editTextSubmitUserChildrenCount.requestFocus();
+
+                }
+
+                else if(TextUtils.isEmpty(userFemaleCount))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please specify number of females", Toast.LENGTH_SHORT).show();
+                    editTextSubmitUserFemaleCount.setError("Female Count Required");
+                    editTextSubmitUserFemaleCount.requestFocus();
+
+                }
+
+                else if(TextUtils.isEmpty(userSeniorCitizenCount))
+                {
+                    Toast.makeText(FormFillUpActivity.this, "Please specify number of senior citizens", Toast.LENGTH_SHORT).show();
+                    editTextSubmitUserSeniorCitizenCount.setError("Senior citizen Count Required");
+                    editTextSubmitUserSeniorCitizenCount.requestFocus();
+
+                }
+
+
+                else if(authProfile.getCurrentUser()==null)
+                {
+                    Toast.makeText(FormFillUpActivity.this, "You must login before submit", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -540,8 +591,10 @@ public class FormFillUpActivity extends AppCompatActivity {
 
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
         userID  = firebaseUser.getUid();
+        userName = firebaseUser.getDisplayName();
         DocumentReference documentReference = fstore.collection("Claimed Users").document(userID);
         Map<String, Object> user = new HashMap<>();
+        user.put("userName", userName);
         user.put("userDivision", userDivision);
         user.put("userDistrict", userDistrict);
         user.put("userUpazilla", userUpazilla);

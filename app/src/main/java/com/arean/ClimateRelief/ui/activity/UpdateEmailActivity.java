@@ -38,7 +38,7 @@ public class UpdateEmailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_email);
 
-        editTextPwd = findViewById(R.id.editText_update_email_verify_password);
+        editTextPwd = (EditText) findViewById(R.id.editText_update_email_verify_password);
         editTextNewEmail = findViewById(R.id.editText_update_email_new);
         textViewAuthenticated = findViewById(R.id.textView_update_email_authenticated);
         buttonUpdateEmail = findViewById(R.id.button_update_email);
@@ -72,6 +72,7 @@ public class UpdateEmailActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 userPwd = editTextPwd.getText().toString();
+
                 if(TextUtils.isEmpty(userPwd))
                 {
                     Toast.makeText(UpdateEmailActivity.this, "Password is needed to continue", Toast.LENGTH_SHORT).show();
@@ -131,6 +132,30 @@ public class UpdateEmailActivity extends AppCompatActivity {
 
     private void updateEmail(FirebaseUser firebaseUser)
     {
+        firebaseUser.updateEmail(userNewEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isComplete())
+                {
+                    firebaseUser.sendEmailVerification();
+                    Toast.makeText(UpdateEmailActivity.this, "Email has been updated. Please verify your email now.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UpdateEmailActivity.this, UserProfileActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                {
+                    try{
+
+                        throw task.getException();
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.makeText(UpdateEmailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
 
     }
 
@@ -156,7 +181,6 @@ public class UpdateEmailActivity extends AppCompatActivity {
             finish();
 
         }
-//
         else if(id == R.id.menu_update_email)
         {
             Intent intent = new Intent(UpdateEmailActivity.this, UpdateEmailActivity.class);
@@ -164,24 +188,14 @@ public class UpdateEmailActivity extends AppCompatActivity {
             finish();
 
         }
-//        else if(id == R.id.menu_settings)
-//        {
-//            Toast.makeText(UserProfileActivity.this, "menu settings", Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//        else if(id == R.id.menu_change_password)
-//        {
-//            Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
-//            startActivity(intent);
-//        }
-//
-//        else if(id == R.id.menu_delete_profile)
-//        {
-//            Intent intent = new Intent(UserProfileActivity.this, DeleteProfileActivity.class);
-//            startActivity(intent);
-//
-//        }
+
+        else if(id == R.id.menu_change_password)
+        {
+            Intent intent = new Intent(UpdateEmailActivity.this, ChangePasswordActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
 
         else if(id == R.id.menu_logout)
         {

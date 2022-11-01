@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.activity.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
 import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;
@@ -48,7 +49,10 @@ public class AccountActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.navigation_donate:
+                    startActivity(new Intent(getApplicationContext(), ClaimerListActivity.class));
+                    overridePendingTransition(0,0);
                     return true;
+
                 case R.id.navigation_account:
 
                     if (authProfile.getCurrentUser()!=null)

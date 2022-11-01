@@ -17,6 +17,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ClaimerListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
@@ -30,9 +33,7 @@
         <activity
             android:name=".ui.AccountActivity"
             android:exported="false"
-            android:parentActivityName=".ui.home.MainActivityweather">
-
-        </activity>
+            android:parentActivityName=".ui.home.MainActivityweather"></activity>
         <activity
             android:name=".ui.FormFillUpActivity"
             android:exported="false" />
@@ -44,10 +45,14 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.UpdateProfileActivity"
-            android:exported="false">
+            android:exported="false"></activity>
+        <activity
+            android:name=".ui.activity.ChangePasswordActivity"
+            android:exported="false"></activity>
 
-        </activity>
-
+        <activity
+            android:name=".ui.activity.ClaimerListActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".ui.activity.UploadProfilePicActivity"
             android:exported="false" />
@@ -67,7 +72,7 @@
         <activity
             android:name=".ui.activity.UserProfileActivity"
             android:exported="false"
-            android:parentActivityName=".ui.home.MainActivityweather"/>
+            android:parentActivityName=".ui.home.MainActivityweather" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"
