@@ -67,16 +67,16 @@ public class UpdateProfileActivity extends AppCompatActivity {
             }
         });
 
-//        Button buttonUpdateEmail  = findViewById(R.id.button_update_email);
-//
-//        buttonUpdateEmail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(UpdateProfileActivity.this, UpdateEmailActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        Button buttonUpdateEmail  = findViewById(R.id.button_update_email);
+
+        buttonUpdateEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateProfileActivity.this, UpdateEmailActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         editTextUpdateDoB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,7 +271,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             finish();
 
         }
-//
+
         else if(id == R.id.menu_update_email)
         {
             Intent intent = new Intent(UpdateProfileActivity.this, UpdateEmailActivity.class);
@@ -279,24 +279,13 @@ public class UpdateProfileActivity extends AppCompatActivity {
             finish();
 
         }
-//        else if(id == R.id.menu_settings)
-//        {
-//            Toast.makeText(UserProfileActivity.this, "menu settings", Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//        else if(id == R.id.menu_change_password)
-//        {
-//            Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
-//            startActivity(intent);
-//        }
-//
-//        else if(id == R.id.menu_delete_profile)
-//        {
-//            Intent intent = new Intent(UserProfileActivity.this, DeleteProfileActivity.class);
-//            startActivity(intent);
-//
-//        }
+
+        else if(id == R.id.menu_change_password)
+        {
+            Intent intent = new Intent(UpdateProfileActivity.this, ChangePasswordActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         else if(id == R.id.menu_logout)
         {
@@ -307,8 +296,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
-
-
 
         }
         else

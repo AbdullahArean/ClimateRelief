@@ -25,6 +25,7 @@ import com.arean.ClimateRelief.model.db.ItemHourlyDB;
 import com.arean.ClimateRelief.model.fivedayweather.FiveDayResponse;
 import com.arean.ClimateRelief.model.fivedayweather.ItemHourly;
 import com.arean.ClimateRelief.ui.activity.BaseActivity;
+import com.arean.ClimateRelief.ui.activity.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.activity.HourlyActivity;
 import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.arean.ClimateRelief.utils.service.ApiService;
@@ -115,6 +116,8 @@ public class MainActivityweather extends BaseActivity {
             overridePendingTransition(0,0);
             return true;
           case R.id.navigation_donate:
+            startActivity(new Intent(getApplicationContext(), ClaimerListActivity.class));
+            overridePendingTransition(0,0);
             return true;
           case R.id.navigation_account:
             if (authProfile.getCurrentUser()!=null)
