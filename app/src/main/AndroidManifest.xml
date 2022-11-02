@@ -51,7 +51,7 @@
             android:exported="false"></activity>
 
         <activity
-            android:name=".ui.activity.ClaimerListActivity"
+            android:name=".ui.ClaimerListActivity"
             android:exported="false"></activity>
         <activity
             android:name=".ui.activity.UploadProfilePicActivity"

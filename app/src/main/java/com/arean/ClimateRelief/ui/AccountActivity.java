@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.ui.activity.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.activity.ContactUsActivity;
 import com.arean.ClimateRelief.ui.activity.LoginActivity;
 import com.arean.ClimateRelief.ui.activity.RegisterActivity;

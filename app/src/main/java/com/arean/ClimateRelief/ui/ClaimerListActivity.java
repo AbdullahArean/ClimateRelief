@@ -1,14 +1,22 @@
-package com.arean.ClimateRelief.ui.activity;
+package com.arean.ClimateRelief.ui;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.activity.ClaimerInfo;
+import com.arean.ClimateRelief.ui.activity.ClaimerListAdapterNew;
+import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,11 +32,53 @@ public class ClaimerListActivity extends AppCompatActivity {
     ArrayList<ClaimerInfo> claimerInfoArrayList;
     ClaimerListAdapterNew claimerListAdapter;
     FirebaseFirestore db;
+    FirebaseAuth authProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_claimer_list);
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.navigation_donate);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(), MainActivityweather.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_claim:
+                        startActivity(new Intent(getApplicationContext(), FormFillUpActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_donate:
+                        startActivity(new Intent(getApplicationContext(), ClaimerListActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_account:
+                        if (authProfile.getCurrentUser()!=null)
+                        {
+                            startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                        }
+                        else
+                        {
+                            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+                        }
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
 
 

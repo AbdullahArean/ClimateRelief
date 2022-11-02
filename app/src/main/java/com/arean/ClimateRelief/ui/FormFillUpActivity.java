@@ -34,7 +34,6 @@ import android.widget.Toast;
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.model.recyclerViewAdapter;
 import com.arean.ClimateRelief.model.recyclerViewModel;
-import com.arean.ClimateRelief.ui.activity.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.activity.UserProfileActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
