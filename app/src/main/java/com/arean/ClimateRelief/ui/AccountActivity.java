@@ -20,7 +20,6 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         authProfile = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_account);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_account);

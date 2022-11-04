@@ -87,18 +87,6 @@ public class FormFillUpActivity extends AppCompatActivity {
     String userID,userName;
 
 
-    RecyclerView recyclerView;
-    ArrayList<recyclerViewModel> recyclerViewModels;
-    recyclerViewAdapter recyclerViewAdapter;
-
-
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,26 +135,6 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         });
 
-
-        recyclerView = findViewById(R.id.recycler_view_claim_form);
-        Integer[] stepImages = {R.drawable.steps, R.drawable.steps, R.drawable.steps,R.drawable.steps,R.drawable.steps,R.drawable.steps} ;
-        String [] stepNames = {"Step 1", "Step 2","Step 3","Step 4","Step 5","Step 6"};
-
-        recyclerViewModels = new ArrayList<>();
-        for(int i=0; i<stepImages.length; i++)
-        {
-            recyclerViewModel tempModel = new recyclerViewModel(stepImages[i], stepNames[i]);
-            recyclerViewModels.add(tempModel);
-
-        }
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(FormFillUpActivity.this,LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-
-        recyclerViewAdapter = new recyclerViewAdapter(FormFillUpActivity.this, recyclerViewModels);
-        recyclerView.setAdapter(recyclerViewAdapter);
 
 
         spinnerDivision = findViewById(R.id.spinnerDivision);
