@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -291,7 +292,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         {
             authProfile.signOut();
             Toast.makeText(UpdateProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(UpdateProfileActivity.this,MainActivity.class );
+            Intent intent = new Intent(UpdateProfileActivity.this, MainActivityweather.class );
 
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

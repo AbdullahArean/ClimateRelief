@@ -96,7 +96,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
                 authProfile.signOut();
                 Toast.makeText(UserProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+                Intent intent = new Intent(UserProfileActivity.this,MainActivityweather.class );
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -203,7 +203,7 @@ public class UserProfileActivity extends AppCompatActivity {
         {
             authProfile.signOut();
             Toast.makeText(UserProfileActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+            Intent intent = new Intent(UserProfileActivity.this,MainActivityweather.class );
 
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
@@ -221,7 +221,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(UserProfileActivity.this,MainActivity.class );
+        Intent intent = new Intent(UserProfileActivity.this,MainActivityweather.class );
         startActivity(intent);
         finish();
     }

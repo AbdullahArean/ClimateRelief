@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.databinding.ActivitySplashscreenBinding;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static final boolean AUTO_HIDE = true;
@@ -93,7 +94,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         mContentView.setOnClickListener(view -> toggle());
         handler=new Handler();
         handler.postDelayed(() -> {
-            Intent intent=new Intent(SplashScreenActivity.this, MainActivity.class);
+            Intent intent=new Intent(SplashScreenActivity.this, MainActivityweather.class);
             startActivity(intent);
             finish();
         },4000);

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,7 +68,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 {
                     Toast.makeText(ForgotPasswordActivity.this, "Please check your inbox for reset link", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(ForgotPasswordActivity.this,MainActivity.class );
+                    Intent intent = new Intent(ForgotPasswordActivity.this, MainActivityweather.class );
 
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);

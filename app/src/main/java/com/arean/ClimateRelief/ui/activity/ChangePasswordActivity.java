@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -235,7 +236,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         {
             authProfile.signOut();
             Toast.makeText(ChangePasswordActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ChangePasswordActivity.this,MainActivity.class );
+            Intent intent = new Intent(ChangePasswordActivity.this, MainActivityweather.class );
 
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

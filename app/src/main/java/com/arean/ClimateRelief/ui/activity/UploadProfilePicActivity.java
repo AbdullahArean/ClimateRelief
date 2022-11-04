@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -179,7 +180,7 @@ public class UploadProfilePicActivity extends AppCompatActivity {
             {
                 authProfile.signOut();
                 Toast.makeText(UploadProfilePicActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(UploadProfilePicActivity.this,MainActivity.class );
+                Intent intent = new Intent(UploadProfilePicActivity.this, MainActivityweather.class );
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
