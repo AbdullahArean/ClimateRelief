@@ -257,13 +257,13 @@
                 android:id="@+id/RL_HelpandSupport"
                 android:layout_below="@+id/RL_mobile"
                 >
+
                 <Button
                     android:id="@+id/settings_from_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Settings">
-                </Button>
+                    android:text="Settings"></Button>
             </RelativeLayout>
 
             <RelativeLayout

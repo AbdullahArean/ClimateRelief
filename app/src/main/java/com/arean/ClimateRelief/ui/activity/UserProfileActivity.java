@@ -75,17 +75,12 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewGender = findViewById(R.id.textView_show_gender);
         textViewMobile = findViewById(R.id.textView_show_mobile);
         Button btnLogOut = findViewById(R.id.buttonLogOut);
-
-
         imageView = findViewById(R.id.imageView_profile_dp);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserProfileActivity.this, UploadProfilePicActivity.class);
-                startActivity(intent);
-            }
+        imageView.setOnClickListener(view -> {
+            Intent intent = new Intent(UserProfileActivity.this, UploadProfilePicActivity.class);
+            startActivity(intent);
         });
-        findViewById(R.id.settings_from_profile).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), LogInSignUpPrompt.class)));
+        findViewById(R.id.settings_from_profile).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SettingsPrompt.class)));
         if(firebaseUser == null)
         {
             Toast.makeText(UserProfileActivity.this, "Something went wrong. User's details are not available", Toast.LENGTH_SHORT).show();

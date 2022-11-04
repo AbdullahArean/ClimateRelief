@@ -20,6 +20,7 @@ public class SettingsPrompt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_prompt);
+        authProfile = FirebaseAuth.getInstance();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_account);
@@ -51,7 +52,7 @@ public class SettingsPrompt extends AppCompatActivity {
             return false;
         });
         findViewById(R.id.button_myaccount).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), LogInSignUpPrompt.class)));
-        findViewById(R.id.button_myaccount).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UserProfileActivity.class)));
+        if (authProfile.getCurrentUser() != null) findViewById(R.id.button_myaccount).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UserProfileActivity.class)));
         findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
         findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
         findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
