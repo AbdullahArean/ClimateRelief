@@ -73,7 +73,8 @@ public class FormFillUpActivity extends AppCompatActivity {
     ArrayAdapter<String> spinnerDivisionArrayAdapter,spinnerDistrictArrayAdapter,spinnerUpazillaArrayAdapter, spinnerUnionArrayAdapter;
     String divisionID;
 
-    String userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userLocationLatitude, userLocationLongitude, userNIDNo, userBkashContactNo;
+    String userDivision, userDistrict, userUpazilla, userUnion, userFemaleCount, userChildrenCount, userSeniorCitizenCount, userDomesticAnimalPresence, userNIDNo, userBkashContactNo;
+    Double userLocationLatitude, userLocationLongitude;
     EditText editTextSubmitUserFemaleCount, editTextSubmitUserChildrenCount, editTextSubmitUserSeniorCitizenCount, editTextSubmitUserBkashContactNo, editTextSubmitUserNIDNo;
     RadioGroup userAnimalPresenceRadioGroup;
     RadioButton userAnimalPresenceRadioButton;
@@ -305,9 +306,9 @@ public class FormFillUpActivity extends AppCompatActivity {
 
                 }
 
-                userLocationLatitude = textView_LatitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", "");
+                userLocationLatitude = Double.valueOf(textView_LatitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", ""));
                 System.out.println(userLocationLatitude);
-                userLocationLongitude = textView_LongitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", "");
+                userLocationLongitude = Double.valueOf(textView_LongitudeCoordinate.getText().toString().replaceAll("[^0-9.]+", ""));
                 userBkashContactNo = editTextSubmitUserBkashContactNo.getText().toString();
                 userNIDNo = editTextSubmitUserNIDNo.getText().toString();
 
@@ -583,7 +584,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     }
 
 
-    public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, String userLocationLatitude, String userLocationLongitude, String userNIDNo, String userBkashContactNo) {
+    public void storeDataIntoFirebase(String userDivision, String userDistrict, String userUpazilla, String userUnion, String userFemaleCount, String userChildrenCount, String userSeniorCitizenCount, String userDomesticAnimalPresence, Double userLocationLatitude, Double userLocationLongitude, String userNIDNo, String userBkashContactNo) {
 
         FirebaseAuth authProfile = FirebaseAuth.getInstance();
         FirebaseFirestore fstore = FirebaseFirestore.getInstance();

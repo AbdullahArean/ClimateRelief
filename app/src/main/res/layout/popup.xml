@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/District"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="District: "
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/Name"/>
+
+
+    <TextView
+        android:id="@+id/NID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NID No: "
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/District"/>
+    <TextView
+        android:id="@+id/BkashContactNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/NID"/>
+    <TextView
+        android:id="@+id/FemaleCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female Members: "
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/BkashContactNo"/>
+
+    <TextView
+        android:id="@+id/SeniorCitizenCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senior Citizen Members"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/FemaleCount"/>
+
+</RelativeLayout>
