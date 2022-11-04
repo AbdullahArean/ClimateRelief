@@ -11,6 +11,10 @@
     <string name="developer_info_title">Developer Info</string>
     <string name="design_api_title">Design &amp; API</string>
     <string name="application_info_title">Application Info</string>
+    <string name= "about_us" translatable="false">
+        Climate Relief is the app by which we  can solve one of the most impactful problem of Relief Distribution in our country.
+        Natural calamities are a matter of concern for the whole world nowadays. But in our country its effect is much more than any other country of this world. Cyclones and floods are very common in Bangladesh. Every year we face cyclones and floods multiple times specially the people living in the low lying part of the country are the worst sufferers. In these circumstances, they must be ensured of proper relief as they face the scarcity of food, pure drinking water etc. But in our country it is one of the biggest challenges to ensure relief to all who are affected and really badly in need of the relief. Because, there is no such management system to handle it. Moreover, corruption is also a matter of concern. Furthermore, the people who get the relief are not under the consideration of his/her family members. So, to solve those issues, we are making such an app with a complete management system that can ensure “Relief to All” moto.
+    </string>
     <string name="application_info_text">
         <![CDATA[
             <p>
@@ -108,5 +112,7 @@
     <string name="dummy_content">Climate Relief\n Easy Relief For Everyone</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 
 </resources>

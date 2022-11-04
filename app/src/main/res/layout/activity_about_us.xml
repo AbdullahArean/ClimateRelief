@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.AboutUs"/>
+    android:background="@color/light_gray"
+    tools:context=".ui.activity.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/purple_700">
+
+            <TextView
+                android:id="@+id/textView_aboutus_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="About Us"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView_register_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_aboutus_head"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="Why are we here?"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:textColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/back_arrow_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-50dp"
+            android:background="@drawable/border"
+            android:padding="15dp">
+
+
+            <RelativeLayout
+                android:id="@+id/RL_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/textView_aboutus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="@string/about_us"
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
