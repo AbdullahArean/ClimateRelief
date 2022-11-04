@@ -119,15 +119,14 @@ public class MainActivityweather extends BaseActivity {
             overridePendingTransition(0,0);
             return true;
           case R.id.navigation_account:
-//            if (authProfile.getCurrentUser()!=null)
-//            {
-//              startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
-//            }
-//            else
-//            {
+            if (authProfile.getCurrentUser()!=null)
+            {
+              startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+            }
+            else
+            {
               startActivity(new Intent(getApplicationContext(), AccountActivity.class));
-
-           // }
+        }
             overridePendingTransition(0,0);
             return true;
         }
