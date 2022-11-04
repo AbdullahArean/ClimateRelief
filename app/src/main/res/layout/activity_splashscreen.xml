@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
+    android:background="@drawable/bdmap"
     android:theme="@style/ThemeOverlay.MyApplication.FullscreenContainer"
     tools:context=".ui.activity.SplashScreenActivity">
-
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView
+    <ImageView
         android:id="@+id/fullscreen_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cr" />
+    <TextView
+        android:id="@+id/tv_appname"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
+        android:layout_height="58dp"
+        android:fontFamily="casual"
+        android:text="Climate Relief"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="34sp"
         android:textStyle="bold" />
+
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -37,6 +40,7 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
         </LinearLayout>
+
     </FrameLayout>
 
 </FrameLayout>

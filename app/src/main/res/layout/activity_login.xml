@@ -4,21 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_iphone_6__7__8_plus___1"
+    android:background="@drawable/loginbg"
     tools:context=".ui.activity.MainActivity">
-
-    <Button
-        android:id="@+id/buttonToreliefForm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="Go To Relief Form"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_forgot_password" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -28,12 +15,14 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
+        android:shadowColor="#E1E1E1"
         android:text="Log In "
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_login_pwd" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_login_pwd"
+        app:strokeColor="#EFE5E5" />
 
     <EditText
         android:id="@+id/editText_login_pwd"
@@ -84,13 +73,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:text="Log In To Continue"
-        android:textColor="@color/black"
+        android:layout_marginTop="188dp"
+        android:text="Log In To Climate Relief Account"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,14 +107,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/back_arrow_login"
-        android:layout_width="51dp"
-        android:layout_height="60dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="9dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
 
     <!--    <ProgressBar-->
     <!--        android:id="@+id/progressBar"-->

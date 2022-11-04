@@ -38,18 +38,6 @@ public class UserProfileActivity extends AppCompatActivity {
     private String fullName, email, doB, gender, mobile;
     private ImageView imageView;
     private FirebaseAuth authProfile;
-
-    final String[] settings = {"Settings", "Languages", "Enable Dark Mode", "Privacy Policy"};
-    AutoCompleteTextView autoCompleteTextView;
-    ArrayAdapter<String> adapterItems;
-
-    final String[] support = {"Help", "Contact Us", "About Us"};
-    AutoCompleteTextView autoCompleteTextViewforHelpandSupport;
-    ArrayAdapter<String> adapterItemsforHelpandSupport;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +46,7 @@ public class UserProfileActivity extends AppCompatActivity {
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-//
-        // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.navigation_account);
-//
-        // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
 
             switch(item.getItemId())
@@ -79,19 +62,6 @@ public class UserProfileActivity extends AppCompatActivity {
                 case R.id.navigation_donate:
                     return true;
                 case R.id.navigation_account:
-
-//                    if (authProfile.getCurrentUser()!=null)
-//                    {
-//                        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
-//                    }
-//                    else
-//                    {
-//                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
-//
-//                    }
-//                    overridePendingTransition(0,0);
-
-
                     return true;
             }
             return false;
@@ -115,23 +85,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-        autoCompleteTextView = findViewById(R.id.autocompletetextView);
-        adapterItems = new ArrayAdapter<String>(UserProfileActivity.this, R.layout.settings_dropdown_item, settings);
-        autoCompleteTextView.setAdapter(adapterItems);
-
-
-        autoCompleteTextViewforHelpandSupport = findViewById(R.id.autocompletetextViewforHelpandSupport);
-        adapterItemsforHelpandSupport = new ArrayAdapter<String>(UserProfileActivity.this, R.layout.helpsupport_dropdown_item, support);
-        autoCompleteTextViewforHelpandSupport.setAdapter(adapterItemsforHelpandSupport);
-
-
-
-
+        findViewById(R.id.settings_from_profile).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), LogInSignUpPrompt.class)));
         if(firebaseUser == null)
         {
             Toast.makeText(UserProfileActivity.this, "Something went wrong. User's details are not available", Toast.LENGTH_SHORT).show();
