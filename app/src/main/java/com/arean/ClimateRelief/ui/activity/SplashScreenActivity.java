@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 
 import com.arean.ClimateRelief.R;
 import com.arean.ClimateRelief.databinding.ActivitySplashscreenBinding;

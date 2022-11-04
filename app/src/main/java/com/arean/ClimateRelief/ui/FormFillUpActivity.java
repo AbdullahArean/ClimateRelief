@@ -398,10 +398,10 @@ public class FormFillUpActivity extends AppCompatActivity {
                     if(location != null)
                     {
                         textView_LatitudeCoordinate = findViewById(R.id.textView_LatitudeCoordinate);
-                        textView_LatitudeCoordinate.setText("Latitude: " + String.valueOf(location.getLatitude()));
+                        textView_LatitudeCoordinate.setText("Latitude: " + location.getLatitude());
 
                         textView_LongitudeCoordinate = findViewById(R.id.textView_LongitudeCoordinate);
-                        textView_LongitudeCoordinate.setText("Longitude: " + String.valueOf(location.getLongitude()));
+                        textView_LongitudeCoordinate.setText("Longitude: " + location.getLongitude());
 
                     }
 
@@ -413,8 +413,8 @@ public class FormFillUpActivity extends AppCompatActivity {
                             public void onLocationResult(@NonNull LocationResult locationResult) {
 
                                 Location location1 = locationResult.getLastLocation();
-                                textView_LatitudeCoordinate.setText("Latitude: " + String.valueOf(location1.getLatitude()));
-                                textView_LongitudeCoordinate.setText("Longitude: " + String.valueOf(location1.getLongitude()));
+                                textView_LatitudeCoordinate.setText("Latitude: " + location1.getLatitude());
+                                textView_LongitudeCoordinate.setText("Longitude: " + location1.getLongitude());
 
                             }
                         };

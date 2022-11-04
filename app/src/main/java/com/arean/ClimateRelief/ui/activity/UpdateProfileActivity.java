@@ -82,7 +82,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String textSADoB[] = textDoB.split("/");
+                String[] textSADoB = textDoB.split("/");
 
                 int day = Integer.parseInt(textSADoB[0]);
                 int month = Integer.parseInt(textSADoB[1]) -1;

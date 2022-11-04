@@ -15,7 +15,6 @@ import com.arean.ClimateRelief.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class ClaimerListAdapterNew extends RecyclerView.Adapter<ClaimerListAdapterNew.ClaimerListViewHolder> implements Filterable {
 

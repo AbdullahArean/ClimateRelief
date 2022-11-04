@@ -2,7 +2,6 @@ package com.arean.ClimateRelief.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 

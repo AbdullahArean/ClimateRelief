@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.arean.ClimateRelief.R;
-import com.arean.ClimateRelief.ui.AccountActivity;
 import com.arean.ClimateRelief.ui.FormFillUpActivity;
 import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -60,7 +57,6 @@ public class UserProfileActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.navigation_donate:
-                    return true;
                 case R.id.navigation_account:
                     return true;
             }
