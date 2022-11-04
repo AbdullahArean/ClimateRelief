@@ -107,6 +107,7 @@
                         android:hint="Enter email"
                         android:inputType="textEmailAddress"
                         android:padding="6dp"
+                        android:textCursorDrawable="@drawable/edittextcursor"
                         android:textSize="16sp" />
                 </RelativeLayout>
 
@@ -155,6 +156,7 @@
                         android:hint="Enter password"
                         android:inputType="textPassword"
                         android:padding="6dp"
+                        android:textCursorDrawable="@drawable/edittextcursor"
                         android:textSize="16sp" />
 
                     <ImageView
@@ -169,7 +171,7 @@
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/buttonLogin"
+                    android:id="@+id/button_login"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/RL_pwd"
@@ -183,7 +185,7 @@
                     android:id="@+id/button_forgot_password"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/buttonLogin"
+                    android:layout_below="@id/button_login"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="70dp"
                     android:layout_marginTop="30dp"

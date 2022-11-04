@@ -55,6 +55,9 @@
             android:name=".ui.FormFillUpActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.UserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.ClaimerListActivity"
             android:exported="false" />
         <activity
