@@ -52,10 +52,13 @@ public class SettingsPrompt extends AppCompatActivity {
         });
         findViewById(R.id.button_myaccount).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), LogInSignUpPrompt.class)));
         if (authProfile.getCurrentUser() != null) findViewById(R.id.button_myaccount).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UserProfileActivity.class)));
+        findViewById(R.id.button6).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
         findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
-        findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
-        findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
-        findViewById(R.id.button_cu).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ContactUsActivity.class)));
+        findViewById(R.id.button2).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UnderConstruction.class)));
+        findViewById(R.id.button3).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UnderConstruction.class)));
+        findViewById(R.id.button4).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UnderConstruction.class)));
+        findViewById(R.id.button7).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), AboutUs.class)));
+
 
     }
 }

@@ -18,6 +18,12 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.UnderConstruction"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.SettingsPrompt"
             android:exported="false">
             <meta-data
@@ -31,10 +37,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".ui.AccountActivity"
-            android:exported="false">
-
-        </activity>
+        <activity
+            android:name=".ui.AccountActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
