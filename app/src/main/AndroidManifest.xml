@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".utils.MyApplication"
@@ -16,9 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        <activity
-            android:name=".ClaimerListActivity"
-            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDwwFzIbChuT-x-i1TFka2fsdCf2eFccgc"/>
+
+
         <activity
             android:name=".ui.activity.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -38,6 +42,9 @@
             android:name=".ui.FormFillUpActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.ClaimerListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.ContactUsActivity"
             android:exported="false" />
         <activity
@@ -50,9 +57,7 @@
             android:name=".ui.activity.ChangePasswordActivity"
             android:exported="false"></activity>
 
-        <activity
-            android:name=".ui.ClaimerListActivity"
-            android:exported="false"></activity>
+
         <activity
             android:name=".ui.activity.UploadProfilePicActivity"
             android:exported="false" />
