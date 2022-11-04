@@ -61,6 +61,7 @@ public class ClaimerListAdapterNew extends RecyclerView.Adapter<ClaimerListAdapt
     public ClaimerListAdapterNew(Context context, ArrayList<ClaimerInfo> claimerArrayList) {
         this.context = context;
         ClaimerArrayList = claimerArrayList;
+        this.getClaimerListFilter = claimerArrayList;
     }
 
     @NonNull
@@ -73,13 +74,13 @@ public class ClaimerListAdapterNew extends RecyclerView.Adapter<ClaimerListAdapt
 
     @Override
     public void onBindViewHolder(@NonNull ClaimerListAdapterNew.ClaimerListViewHolder holder, int position) {
-         ClaimerInfo claimer = ClaimerArrayList.get(position);
-         holder.userName.setText(claimer.userName);
-         holder.userDistrict.setText(claimer.userDistrict);
-         holder.userNIDNo.setText(claimer.userNIDNo);
-         holder.userFemaleCount.setText(claimer.userFemaleCount);
-         holder.userSeniorCitizenCount.setText(claimer.userSeniorCitizenCount);
-         holder.userBkashContactNo.setText(claimer.userBkashContactNo);
+        ClaimerInfo claimer = ClaimerArrayList.get(position);
+        holder.userName.setText(claimer.userName);
+        holder.userDistrict.setText(claimer.userDistrict);
+        holder.userNIDNo.setText(claimer.userNIDNo);
+        holder.userFemaleCount.setText(claimer.userFemaleCount);
+        holder.userSeniorCitizenCount.setText(claimer.userSeniorCitizenCount);
+        holder.userBkashContactNo.setText(claimer.userBkashContactNo);
     }
 
     @Override

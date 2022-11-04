@@ -264,8 +264,7 @@ public class ClaimerListActivity extends AppCompatActivity implements OnMapReady
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                String searchStr = newText;
-                claimerListAdapter.getFilter().filter(searchStr);//Changed a bit
+                claimerListAdapter.getFilter().filter(newText);//Changed a bit
                 return false;
             }
         });
