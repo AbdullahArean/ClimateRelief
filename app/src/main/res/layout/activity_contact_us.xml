@@ -53,17 +53,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/contact_us_email_address"
-        android:hint="Type our email address"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/contact_us_email_address"
         android:id="@+id/contact_us_email_subject"
         android:inputType="textEmailSubject"
         android:textColor="@color/black"

@@ -13,39 +13,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="335dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView_recycler_view_head"
-                android:text="How To Claim"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="30dp"
-                android:background="@color/purple_700"
-                android:textColor="@color/white"
-                android:textAlignment="center">
-
-            </TextView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_claim_form"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textView_recycler_view_head"
-                android:layout_marginTop="30dp">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-
-
-
-
-        </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
