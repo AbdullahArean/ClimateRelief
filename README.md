@@ -1,8 +1,7 @@
 ## Project's Title
 
 ### Climate Relief
-
-
+<img src="https://user-images.githubusercontent.com/70502574/200132722-75b386a3-c8bf-4ac6-848c-3852c4fbca15.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="300" height="700" />
 
 ## Introduction
 
