@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.arean.ClimateRelief.R;
+import com.arean.ClimateRelief.ui.AccountActivity;
+import com.arean.ClimateRelief.ui.ClaimerListActivity;
 import com.arean.ClimateRelief.ui.FormFillUpActivity;
 import com.arean.ClimateRelief.ui.MainActivityweather;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -57,7 +59,19 @@ public class UserProfileActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.navigation_donate:
+                    startActivity(new Intent(getApplicationContext(), ClaimerListActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+
                 case R.id.navigation_account:
+
+                    if (authProfile.getCurrentUser() != null) {
+                        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+
+                    }
+                    overridePendingTransition(0, 0);
                     return true;
             }
             return false;

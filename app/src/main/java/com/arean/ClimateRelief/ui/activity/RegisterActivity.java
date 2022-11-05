@@ -120,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                     editTextRegisterDoB.setError("Full name required");
                     editTextRegisterDoB.requestFocus();
                 }
-                if (radioGroupRegisterGender.getCheckedRadioButtonId() == -1) {
+                else if (radioGroupRegisterGender.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(RegisterActivity.this, "Please select your gender", Toast.LENGTH_SHORT).show();
                     radioButtonRegisterSelectedGender.setError("Gender required");
                     radioButtonRegisterSelectedGender.requestFocus();
