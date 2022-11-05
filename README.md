@@ -76,6 +76,7 @@ Users can upload photos, change their email addresses, report problems, and lear
 
 
 
+
 ## Project UI:
 
 - Interactive & Real-Time Weather Update: <br>
@@ -91,7 +92,7 @@ Users can upload photos, change their email addresses, report problems, and lear
  </tr>
  <tr>
   <td>
-   <img src="https://user-images.githubusercontent.com/60891346/200124885-d5cd96cc-214f-4735-88de-c53112af47f2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+   <img src="https://user-images.githubusercontent.com/60891346/200130969-fade79c8-cb7a-49c1-9da2-03371f1b9171.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
   </td>
   <td>
    <img src="https://user-images.githubusercontent.com/60891346/200124958-5e29afae-cd75-4c98-8c1e-e231148cdf1d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
@@ -110,7 +111,7 @@ Users can upload photos, change their email addresses, report problems, and lear
    <img src="https://user-images.githubusercontent.com/60891346/200125699-3a03eaee-2f47-42f4-b7e7-0562720d1f54.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
   </td>
   <td>
-   <img src="https://user-images.githubusercontent.com/60891346/200124885-d5cd96cc-214f-4735-88de-c53112af47f2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+   <img src="https://user-images.githubusercontent.com/60891346/200130884-3e7d95d4-bca1-481e-9114-ccf878d3db0d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
   </td>
  </tr>
  </table>
@@ -132,7 +133,7 @@ Users can upload photos, change their email addresses, report problems, and lear
  </table>
  
  - Account Section and Updatability
- 
+
  <table border = "0">
   <tr>
    <td>
@@ -186,7 +187,7 @@ Users can upload photos, change their email addresses, report problems, and lear
    <img src="https://user-images.githubusercontent.com/60891346/200127386-316808ed-ba51-441b-a0d8-55ca23cdc02d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
   </td>
   <td>
-   <img src="https://user-images.githubusercontent.com/60891346/200127437-a984b7f3-0ad7-4617-a486-2c881adb4272.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+   <img src="https://user-images.githubusercontent.com/60891346/200129719-a43aef38-dc17-47d5-b221-a0e9e89b4b38.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
   </td>
  </tr>
  </table>
@@ -234,25 +235,38 @@ Users can upload photos, change their email addresses, report problems, and lear
 
 
 ## Team Member Responsibilities :
-Abdullah Ibne Hanif Arean :<br> 
-- Early Prototype Design<br>
-- Interactive yet Simple UI/UX Design<br>
-- Version Control Using Best Practices of Git and Github<br>
-- Multifunctional Weather Update Page<br>
-- Proper Documentation <br>
 
-Ahnaf Tahmid :<br>
-- LogIn and Sign Up <br>
-- Firebase Integration & Authentication<br> 
+#### Abdullah Ibne Hanif Arean, FH-12 (2019-917-795), Team Leader <br>
+- Organizing, allocating tasks, and managing the whole project <br>
+- Interactive but simple early prototype ui/ux design <br>
+- Illustrated graphical component including icons and logos <br>
+- Animation in different parts of project <br>
+- City wise current weather update page with graphical representation <br>
+- Hourly weather forecast for the next four days with graphical representation <br>
+- Weather forecast for fifteen days <br>
+- Using git and github's best practices for version control <br>
+- Clear documentation with a self-explanatory codebase <br>
+
+#### Ahnaf Tahmid, FH-04 (2019-817-787), Team Member <br>
+
+- Firebase Authentication, Realtime Database, Firebase Firestore Database and Firebase Storage Integration <br>
+- LogIn and Sign Up Using Firebase Authentication & Realtime Database <br>
 - Relief Form <br>
-- Account Details<br>
+- Account Details <br>
+- Real Time Location Update <br>
+- Setup Constraints and handling exceptions <br>
+- Data Retrieval From Firebase Realtime Database and Firebase Firestore in Google Maps and Forms <br>
 
-Mehadi Hasan Santo :<br>
-- Bottom Navigation Control <br>
-- Real Time Location Update<br>
-- Bug fixing and Debugging xmls<br>
-- Format documentation and Readme file update<br>
-- Map Integration <br>
+
+#### Mehadi Hasan, SH-60 (2019-517-843), Team Member <br>
+- Control of Bottom Navigation bar throughout the whole project <br>
+- Fixing Bugs and Debugging of xml files <br>
+- Format documentation <br>
+- Readme file update and report documentation <br>
+- Integration of Mapview to show locations <br>
+- Showing multiple Markers in Mapview along with popups <br>
+- Implementation of Searchview on Recyclerview <br>
+
 
     
 
@@ -269,9 +283,9 @@ Mehadi Hasan Santo :<br>
 
 -   [Inkscape](https://inkscape.org/) - professional quality vector graphics software and open source!
 
-
-    
-
+-   [Firebase, Firestore and FireAuth](https://firebase.google.com/docs/auth) - provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to an app
+-  [Picasso](https://square.github.io/picasso/) - a powerful image downloading and caching library for Android
+-  [Material Design](https://developer.android.com/develop/ui/views/theming/look-and-feel) - a comprehensive guide for visual, motion, and interaction design across platforms and devices.
 
 
 
@@ -280,7 +294,7 @@ Mehadi Hasan Santo :<br>
 GitHub Repository:
 https://github.com/AbdullahArean/ClimateRelief 
 
-Live Report of the Project: [Google Docs Report Link](https://docs.google.com/document/d/17lTjB4YTsYsLOpxNutnW1i_DnNBrY4Kgfk3dAxddL30/edit#)
+Live Report of the Project: [Google Docs Report Link](https://docs.google.com/document/d/1nidITKW6GKpf_TCMTZ9H2Nqf_1evGKaacp8cQh7rJhY/edit#)
 
 
 ## Limitations:
@@ -289,11 +303,14 @@ Live Report of the Project: [Google Docs Report Link](https://docs.google.com/do
 
 ## Our Future  Planning
 
-Bring all the affected people into our scheme <br>
-Make a non-android application <br>
-Ensure claimer-donor direct communication to avoid misappropriation and mismanagement <br>
+The app is currently in its basic version having only the bare minimum features. We’d like to improve the user interface to make it appealing to the users. We’d also like to incorporate useful features like … <br>
+
+- Bring all the affected people into our scheme <br>
+- Make a non-android application <br>
+- Ensure claimer-donor direct communication to avoid misappropriation and mismanagement <br>
+
 
 
 ## Conclusion 
 
-Apart from learning new languages and technologies, this project taught us collaboration, pressure handling, peer communication, and many other important qualities a software engineer should have. We hope we can implement these learnings in our life in the future to become successful.
+Apart from learning new technologies, this project taught us collaboration, pressure handling, peer communication, and many other important qualities a software engineer should have. We hope we can implement these learnings in our life in the future to become successful.
