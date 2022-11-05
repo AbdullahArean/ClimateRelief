@@ -1,6 +1,6 @@
 ## Project's Title
 
-Climate Relief
+### Climate Relief
 
 
 
@@ -48,20 +48,179 @@ We want to dedicate this app to the people of our country. We are not planning t
 
 ## Project Features:
 
-1. Registration & Sign In  <br>  
-2. Proper Validation for Multi-User Platform <br>
-3. Real Time Weather Update <br>
-4. Apply For/ Donate Relief <br>
-5. Graphical Presentation of Relief Requests <br>
-6. Auto Address Generator for any place <br>
-7. Multilingual Support <br>
-8. Night Mode <br>
-9. SMS Relief Confirmation <br>
-10. Easy to Use & Smooth UX <br>
-11. List View of Claimars <br>
-12. Upload Photo, Change Email and Other info <br>
+- Interactive & Real-Time Weather Update: <br>
+City-specific current weather , Hourly weather forecast with visuals <br>
+for the next four days and fifteen-day weather forecast <br>
+
+- Registration & Sign In: <br>
+Google Firebase authentication with email validation is utilized for <br>
+both registration and sign in. <br>       
 
 
+- Auto Address Generator for any place of Bangladesh : <br>
+A unique database has been established for the entire country of Bangladesh. <br>
+- Easy to Use & Smooth UI and UX: <br>
+A very engaging UI is created for a better User Experience that is simple and straightforward to use. <br>
+- Relief Claim Form with Location: <br>
+This section makes use of a database that was created by the author on the various sites in Bangladesh. <br>
+- Map Integration & Floating Info show: <br>
+This section makes use of the Google Maps API. Furthermore, a popup has been created to display claimer information. <br>
+- Proper Validation for Multi-User Platform & Data Entry : <br>
+Both claimants and contributors must go through thorough validation and submit the data correctly according to the field. <br>
+
+- Proper Documentation & Github :  <br>
+Proper Github Workflow, as well as commits, pulls, and pushes, have been followed on a regular basis. Furthermore, Codes documentation and readme file updates are completed correctly. <br>
+- Upload Photo, Change Email and Other info: <br>
+Users can upload photos, change their email addresses, report problems, and learn more about the us. <br>
+
+
+
+
+## Project UI:
+
+- Interactive & Real-Time Weather Update: <br>
+
+<table border = "0">
+ <tr>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200124117-e05406ed-f347-46f6-a5e9-7258e556a43b.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200123473-3c83b8d9-48bc-4d99-bd57-a8e93e65772c.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200124885-d5cd96cc-214f-4735-88de-c53112af47f2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200124958-5e29afae-cd75-4c98-8c1e-e231148cdf1d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+ - User Sign In
+ 
+ <table>
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200125078-21747efc-7e4e-4473-b35c-5f408f1cc061.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200125699-3a03eaee-2f47-42f4-b7e7-0562720d1f54.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200124885-d5cd96cc-214f-4735-88de-c53112af47f2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+ - User Sign Up
+ 
+ <table border = "0">
+<tr>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200125486-06279b74-e508-4730-af9c-f5f8d953dc2d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200125522-3b271253-ebb0-4a36-8935-e57e5fdbb294.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200125498-51b3295c-f265-4cd2-885c-f16e2e277ae0.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+ - Account Section and Updatability
+ 
+ <table border = "0">
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200126036-6d31f11e-ce08-460a-a06b-1d2f9e84d55e.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200126045-f7614012-cf43-46a3-bb7f-eb4090e1d064.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200126055-489de1e6-21d1-48b8-9f2f-79ab5e2bac09.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+
+- Update Email & Change Password Functionality
+
+<table border = "0">
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127083-f656003c-cf85-4aab-9377-02235fa03657.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127100-76f00f2f-3974-41db-9224-0bfd3e322d8e.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ 
+ <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127112-8f19095e-02c5-4e64-9339-551eb6203c52.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127118-fc34167e-c5de-47f8-90dc-6cb6c003b9d6.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+- Claim Form and Get Location
+
+<table border = "0">
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127345-c7cc87bd-b030-495e-b78d-705c7ed15ad1.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127370-cca16887-7684-4fc4-983c-a2b9bb4c20a4.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ 
+ <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127386-316808ed-ba51-441b-a0d8-55ca23cdc02d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127437-a984b7f3-0ad7-4617-a486-2c881adb4272.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+ - Graphical Representation of Relief Request
+ 
+ <table border = "0">
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127651-05b8f72d-190e-4ace-ac41-257cac46991d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127654-e867def4-df8b-4ed4-bfa3-5049891f3efa.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
+ 
+ - Settings , About Us & Contact Us
+ 
+  <table border = "0">
+  <tr>
+   <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127877-66f5f5b3-6fd2-439f-8e7e-886277ed0ead.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127897-bb227f1a-cc3a-4487-9987-28bfef92e378.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+  <td>
+   <img src="https://user-images.githubusercontent.com/60891346/200127907-ea16ee78-f0d7-4be0-a2c7-af52a2c8179d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+  </td>
+ </tr>
+ </table>
+ 
 
 
 
