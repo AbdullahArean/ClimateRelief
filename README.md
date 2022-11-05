@@ -223,18 +223,7 @@ Users can upload photos, change their email addresses, report problems, and lear
  </table>
  
 
-
-
-
-## UI Prototype Link:
-
-[Figma UI Prototype Link](https://www.figma.com/proto/G8PRFfrqsECEv2DyQsACsP/Climate-Relief-Ultimate?node-id=1%3A5&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A5)
-
-
-## Project Modules & Discussion:
-
-
-## Team Member Responsibilities :
+## Team Member Responsibilities & Contributions :
 
 #### Abdullah Ibne Hanif Arean, FH-12 (2019-917-795), Team Leader <br>
 - Organizing, allocating tasks, and managing the whole project <br>
