@@ -286,7 +286,7 @@ Live Report of the Project: [Google Docs Report Link](https://docs.google.com/do
 
 YouTube Video Link: [YouTube Video Link](https://youtu.be/kuvz1N1HyYE)
 
-Latest APK Link: [Google Drive Link](https://drive.google.com/file/d/1n0eskfqgNX9JJ6QJy2E2RSCK0T2HQVSY/view?usp=sharing)
+Latest APK Link: [Google Drive Link](https://drive.google.com/drive/folders/1IjOEoDGzDyg99NWBZvNqt1FXbqOxLZsB?usp=sharing)
 
 ## Latest Releases
 Latest Release Link: ["Assets" Contains apk & zip](https://github.com/AbdullahArean/ClimateRelief/releases)
