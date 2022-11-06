@@ -16,12 +16,12 @@ Heavy rainfall throughout the country and the flow of large-scale water often le
 
 
 ## Problems we want to solve
-Insufficient relief distribution after flood
-Victim's names have been deducted from the relief list
-No system for complaint
-Irregularities in relief distribution
-Misappropriation of relief
-Mismanagement of giving the relief
+Insufficient relief distribution after flood<br>
+Victim's names have been deducted from the relief list<br>
+No system for complaint<br>
+Irregularities in relief distribution<br>
+Misappropriation of relief<br>
+Mismanagement of giving the relief<br>
 
 
 ## Idea Originality
@@ -289,7 +289,7 @@ YouTube Video Link: [YouTube Video Link](https://youtu.be/kuvz1N1HyYE)
 Latest APK Link: [Google Drive Link](https://drive.google.com/drive/folders/1IjOEoDGzDyg99NWBZvNqt1FXbqOxLZsB?usp=sharing)
 
 ## Latest Releases
-Latest Release Link: ["Assets" Contains apk & zip](https://github.com/AbdullahArean/ClimateRelief/releases)
+Latest Release Link: ["Assets (Scroll Till End)" Contains apk & zip](https://github.com/AbdullahArean/ClimateRelief/releases)
 
 ## Our Future  Planning
 
